@@ -1,0 +1,97 @@
+{
+  "name": "HyperCoSi",
+  "version": "0.0.1-alpha",
+  "description": "Hyperion Config and Simulation Toolkit",
+  "keywords": [
+    "Hyperion",
+    "config",
+    "ambilight",
+    "ws2812"
+  ],
+  "repository": "github:mommel/hypercosi",
+  "author": {
+    "name": "Mommel",
+    "url": "https://github.com/Mommel"
+  },
+  "contributors": [
+    {
+      "name": "JuliaMWeber",
+      "url": "https://github.com/JuliaMWeber"
+    },
+    {
+      "name": "Krachkind",
+      "url": "https://github.com/krachkind"
+    }
+  ],
+  "license": "CC-BY-NC-4.0",
+  "main": "index.js",
+  "dependencies": {
+    "animate.css": "^3.7.2",
+    "fancy-input": "^1.3.3",
+    "fast-average-color": "^5.2.1",
+    "magic.css": "^1.4.1"
+  },
+  "registry": "https://registry.yarnpkg.com",
+  "scripts": {
+    "build": "webpack --mode production --progress",
+    "clean": "rimraf dist",
+    "dev": "clean start webpack --mode development",
+    "lint": "",
+    "lint:css": "stylelint  src/**/*.js src/**/*.jsx",
+    "lint:js": "eslint  --ext .js --ext .jsx src",
+    "lint:fix": "",
+    "start": "webpack --mode production",
+    "start:dev": "webpack-dev-server --progress --colors",
+    "test": "scripts/install.js",
+    "wtf": "yarn run clean && rimraf node_modules",
+    "wtfscript": "scripts/install.js"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.6.4",
+    "@babel/preset-env": "^7.6.3",
+    "babel-eslint": "^10.0.1",
+    "babel-loader": "^8.0.6",
+    "babel-minify-webpack-plugin": "^0.3.1",
+    "browser-sync": "^2.26.7",
+    "browser-sync-webpack-plugin": "^2.2.2",
+    "clean-webpack-plugin": "^3.0.0",
+    "eslint": "^5.16.0",
+    "eslint-config-prettier": "^6.4.0",
+    "eslint-config-standard": "^14.1.0",
+    "eslint-config-standard-jsx": "^8.1.0",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-loader": "^2.1.1",
+    "eslint-plugin-i18n-json": "^2.4.0",
+    "eslint-plugin-import": "^2.18.2",
+    "eslint-plugin-jest": "^22.19.0",
+    "eslint-plugin-node": "^10.0.0",
+    "eslint-plugin-prettier": "^3.1.1",
+    "eslint-plugin-react": "^7.16.0",
+    "eslint-plugin-security": "^1.4.0",
+    "eslint-plugin-standard": "^4.0.1",
+    "html-loader": "^0.5.5",
+    "html-webpack-plugin": "^3.2.0",
+    "htmllint-loader": "^2.1.4",
+    "i18n": "^0.8.3",
+    "i18n-plugin": "^0.1.2",
+    "i18n-webpack-plugin": "^1.0.0",
+    "jest": "^24.9.0",
+    "jslint": "^0.12.1",
+    "node-sass": "^4.12.0",
+    "nodemon": "^1.19.3",
+    "npm": "^6.12.0",
+    "prettier": "1.18.2",
+    "rimraf": "^3.0.0",
+    "sass": "^1.23.0",
+    "sass-loader": "^8.0.0",
+    "stylelint": "^11.1.1",
+    "stylelint-config-recommended": "^3.0.0",
+    "stylelint-config-styled-components": "^0.1.1",
+    "stylelint-processor-styled-components": "^1.8.0",
+    "uglifyjs": "^2.4.11",
+    "uglifyjs-webpack-plugin": "^2.2.0",
+    "webpack": "~4.41.2",
+    "webpack-cli": "^3.3.9",
+    "webpack-dev-server": "^3.8.2"
+  }
+}
