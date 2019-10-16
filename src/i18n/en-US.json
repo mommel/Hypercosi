@@ -1,0 +1,22 @@
+{
+  "menu": {
+    "configurator": {
+      "configurator": "Configurator",
+      "hardware": "Hardware",
+      "colormanagement": "Colormanagement",
+      "services": "Services",
+      "datatransfer": "Datatransfer",
+      "export": {
+        "export": "Export",
+        "hyperion": "Hyperion",
+        "boblight": "Boblight",
+        "lightpack": "LightPack",
+        "ambioder": "Ambioder",
+        "enigmalight": "Enigmalight"
+      },
+      "simulator": {
+        "simulator": "Simulator"
+      }
+    }
+  }
+}
