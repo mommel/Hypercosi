@@ -19,17 +19,12 @@ Hyperion Configuration Tool and Simulator
 
 ## Install
 
-First, clone the repo via git:
+Clone the repo and install the dependencies:
 
 ```bash
-git clone --depth 1 --single-branch --branch master https://github.com/electron-react-boilerplate/electron-react-boilerplate.git your-project-name
-```
-
-And then install the dependencies with yarn.
-
-```bash
-$ cd your-project-name
-$ yarn
+git clone https://github.com/mommel/Hypercosi.git && \
+cd Hypercosi && \
+yarn
 ```
 
 ## Starting Development
