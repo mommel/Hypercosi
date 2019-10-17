@@ -1,0 +1,41 @@
+.playbutton{
+    position: absolute;
+    bottom:0px;
+    left:50%;
+}
+
+.video-container
+{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+
+    transform: translate(-50%, -50%);
+    /* 3840 × 2160 */
+    width: 384px;
+    height: 216px;
+    /* */
+}
+
+video
+{
+    position: relative;
+    z-index: 100;
+
+    width: 384px;
+    height: 216px;
+
+    display: block;
+
+    margin: 0;
+    padding: 0;
+
+    border: 10px solid black;
+    outline: 1px solid rgba(255, 255, 255, .1);
+    background: black;
+}
+
+.topLeds
+{
+    box-shadow: 1px 1px 25px;
+}
