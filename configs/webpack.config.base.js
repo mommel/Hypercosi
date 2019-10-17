@@ -1,3 +1,7 @@
+/**
+ * Base webpack config used across other specific configs
+ */
+
 import path from 'path';
 import webpack from 'webpack';
 import { dependencies } from '../package.json';
@@ -16,15 +20,7 @@ export default {
             cacheDirectory: true
           }
         }
-      },
-      {
-        test: /\.json$/,
-        include: /i18n/,
-        loader: 'eslint-loader',
-        options: {
-          formatter: require('eslint-plugin-i18n-json/formatter.js'),
-        },
-      },
+      }
     ]
   },
 

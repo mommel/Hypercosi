@@ -1,0 +1,37 @@
+directories:
+  output: release
+  buildResources: resources
+productName: hypercosi
+appId: com.mommel.HyperCoSi
+files:
+  - filter:
+      - app/dist/
+      - app/app.html
+      - app/main.prod.js
+      - app/main.prod.js.map
+      - package.json
+dmg:
+  contents:
+    - x: 130
+      'y': 220
+    - x: 410
+      'y': 220
+      type: link
+      path: /Applications
+win:
+  target:
+    - nsis
+    - msi
+linux:
+  target:
+    - deb
+    - rpm
+    - snap
+    - AppImage
+  category: Development
+publish:
+  provider: github
+  owner: mommel
+  repo: hypercosi
+  private: false
+electronVersion: 3.1.13

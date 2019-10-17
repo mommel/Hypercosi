@@ -1,7 +1,7 @@
 {
   "name": "hypercosi",
   "productName": "HyperCoSi",
-  "version": "0.0.1-alpha",
+  "version": "0.0.1",
   "description": "Hyperion Config and Simulation Toolkit",
   "scripts": {
     "build": "concurrently \"yarn build-main\" \"yarn build-renderer\"",
@@ -34,7 +34,7 @@
     "test-e2e": "node -r @babel/register ./internals/scripts/CheckBuiltsExist.js && cross-env NODE_ENV=test testcafe electron:./ ./test/e2e/HomePage.e2e.js",
     "test-e2e-live": "node -r @babel/register ./internals/scripts/CheckBuiltsExist.js && cross-env NODE_ENV=test testcafe-live electron:./ ./test/e2e/HomePage.e2e.js",
     "test-watch": "yarn test --watch",
-    "wtf": "rimraf node_modules && yarn cache clean && yarn && yarn electron-rebuild && yarn dev"
+    "wtf": ".yarnscripts/wtf"
   },
   "lint-staged": {
     "*.{js,jsx}": [
@@ -53,9 +53,6 @@
     ],
     "*.{yml,md}": [
       "prettier --ignore-path .eslintignore --single-quote --write",
-      "git add"
-    ],
-    ".gitkeep": [
       "git add"
     ]
   },
@@ -220,9 +217,6 @@
     "flow-runtime": "^0.17.0",
     "flow-typed": "^2.5.1",
     "husky": "^1.1.4",
-    "i18n": "^0.8.3",
-    "i18n-plugin": "^0.1.2",
-    "i18n-webpack-plugin": "^1.0.0",
     "identity-obj-proxy": "^3.0.0",
     "jest": "^23.6.0",
     "lint-staged": "^8.1.0",
@@ -243,7 +237,7 @@
     "stylelint-config-standard": "^18.2.0",
     "terser-webpack-plugin": "^1.1.0",
     "testcafe": "^0.23.2",
-    "testcafe-browser-provider-electron": "^0.0.6",
+    "testcafe-browser-provider-electron": "0.0.12",
     "testcafe-live": "^0.1.4",
     "testcafe-react-selectors": "^3.0.0",
     "url-loader": "^1.1.2",
@@ -259,7 +253,9 @@
     "devtron": "^1.4.0",
     "electron-debug": "^2.0.0",
     "electron-log": "^2.2.17",
-    "electron-updater": "^3.2.3",
+    "electron-updater": "^4.1.2",
+    "eslint-config-erb": "^0.0.2",
+    "eslint-plugin-prettier": "^3.1.1",
     "history": "^4.7.2",
     "react": "^16.6.3",
     "react-dom": "^16.6.3",
@@ -276,7 +272,5 @@
     "npm": ">=4.x",
     "yarn": ">=0.21.3"
   },
-  "browserslist": [
-    "defaults"
-  ]
+  "browserslist": "electron 1.6"
 }

@@ -4,7 +4,7 @@ export type Action = {
   +type: string
 };
 
-export type GetState = () => counterStateType;
+export type GetState = () => RootState;
 
 export type Dispatch = ReduxDispatch<Action>;
 
