@@ -1,0 +1,11 @@
+#!/bin/sh
+DIRNAME=$(dirname "$0")
+if [ "${DIRNAME}" == ".yarnscripts" ]; then
+  yarn audit --json > ../audit/audit-output.json
+  yarn audit
+elif [ "${DIRNAME}" == "Hypercosi" ]; then
+  yarn audit --json > audit/audit-output.json
+  yarn audit
+else
+   echo "Unknown Folder"
+fi
