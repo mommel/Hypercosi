@@ -1,21 +1,21 @@
-<img src="internals/img/banner.svg" width="100%" />
+<img src="internals/img/banner.png" width="100%" />
 
 <br>
+
 # Hypercosi
-Hyperion Configuration Tool and Simulator
 
-<hr />
-<br />
+_Hyperion Configuration Tool and Simulator_
 
-<div align="center">
-    [![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square)](https://github.com/prettier/prettier)
-    [![Build Status][travis-image]][travis-url]
-    [![Appveyor Build Status][appveyor-image]][appveyor-url]
-    [![Github Tag][github-tag-image]][github-tag-url]
-</div>
 
-<hr />
-<br />
+<br>
+
+[![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square)](https://github.com/prettier/prettier)   
+[![Build Status][travis-image]][travis-url] 
+[![Appveyor Build Status][appveyor-image]][appveyor-url]  
+[![Github Tag][github-tag-image]][github-tag-url]  
+[![David Tag][david-image]][david-url] 
+[![David Dev Tag][david-dev-image]][david-dev-url]  
+[![Good First Issue Tag][good-first-issue-image]][good-first-issue-url]  
 
 ## Install
 
@@ -60,7 +60,6 @@ $ yarn package
 
 #### All files in node_modules have theor own licenses
 
-[npm-image]: https://img.shields.io/npm/v/hypercosi.svg?style=flat-square
 [github-tag-image]: https://img.shields.io/github/tag/mommel/hypercosi.svg?label=version
 [github-tag-url]: https://github.com/mommel/hypercosi/releases/latest
 [travis-image]: https://travis-ci.com/mommel/hypercosi.svg?branch=master
