@@ -25,7 +25,6 @@
     "postinstall": "yarn flow-typed && electron-builder install-app-deps package.json && yarn build-dll && opencollective-postinstall",
     "postlint-fix": "prettier --ignore-path .eslintignore --single-quote --write '**/*.{*{js,jsx,json},babelrc,eslintrc,prettierrc,stylelintrc}'",
     "postlint-styles-fix": "prettier --ignore-path .eslintignore --single-quote --write '**/*.{css,scss}'",
-    "precommit": "lint-staged",
     "prestart": "yarn build",
     "start": "cross-env NODE_ENV=production electron ./app/main.prod.js",
     "start-main-dev": "cross-env HOT=1 NODE_ENV=development electron -r @babel/register ./app/main.dev.js",
@@ -35,6 +34,7 @@
     "test-e2e": "node -r @babel/register ./internals/scripts/CheckBuiltsExist.js && cross-env NODE_ENV=test testcafe electron:./ ./test/e2e/HomePage.e2e.js",
     "test-e2e-live": "node -r @babel/register ./internals/scripts/CheckBuiltsExist.js && cross-env NODE_ENV=test testcafe-live electron:./ ./test/e2e/HomePage.e2e.js",
     "test-watch": "yarn test --watch",
+    "check-deps": ".yarnscripts/check-deps",
     "icon:update": ".yarnscripts/icons",
     "wtf": ".yarnscripts/wtf"
   },
@@ -189,7 +189,7 @@
     "@babel/register": "^7.0.0",
     "babel-core": "7.0.0-bridge.0",
     "babel-eslint": "^10.0.1",
-    "babel-jest": "^23.6.0",
+    "babel-jest": "^24.9.0",
     "babel-loader": "^8.0.4",
     "babel-plugin-dev-expression": "^0.2.1",
     "babel-plugin-transform-react-remove-prop-types": "^0.4.20",
@@ -216,7 +216,7 @@
     "eslint-plugin-flowtype": "^3.2.0",
     "eslint-plugin-import": "^2.14.0",
     "eslint-plugin-jest": "^22.0.0",
-    "eslint-plugin-jsx-a11y": "6.1.2",
+    "eslint-plugin-jsx-a11y": "^6.2.3",
     "eslint-plugin-promise": "^4.0.1",
     "eslint-plugin-react": "^7.11.1",
     "eslint-plugin-testcafe": "^0.2.1",
@@ -224,10 +224,11 @@
     "file-loader": "^2.0.0",
     "flow-bin": "^0.77.0",
     "flow-runtime": "^0.17.0",
-    "flow-typed": "^2.5.1",
-    "husky": "^1.1.4",
+    "flow-typed": "^2.6.1",
+    "husky": "^3.0.9",
+    "https-proxy-agent": "^3.0.0",
     "identity-obj-proxy": "^3.0.0",
-    "jest": "^23.6.0",
+    "jest": "^24.9.0",
     "lint-staged": "^8.1.0",
     "mini-css-extract-plugin": "^0.4.4",
     "node-sass": "^4.10.0",
@@ -245,10 +246,10 @@
     "stylelint-config-prettier": "^4.0.0",
     "stylelint-config-standard": "^18.2.0",
     "terser-webpack-plugin": "^1.1.0",
-    "testcafe": "^0.23.2",
-    "testcafe-browser-provider-electron": "0.0.12",
+    "testcafe": "^1.6.0",
+    "testcafe-browser-provider-electron": "^0.0.12",
     "testcafe-live": "^0.1.4",
-    "testcafe-react-selectors": "^3.0.0",
+    "testcafe-react-selectors": "^3.2.0",
     "url-loader": "^1.1.2",
     "webpack": "^4.26.0",
     "webpack-bundle-analyzer": "^3.0.3",
@@ -264,7 +265,7 @@
     "electron-icon-maker": "^0.0.4",
     "electron-log": "^2.2.17",
     "electron-updater": "^4.1.2",
-    "eslint-config-erb": "^0.0.2",
+    "eslint-config-erb": "^0.0.2-1",
     "eslint-plugin-prettier": "^3.1.1",
     "history": "^4.7.2",
     "react": "^16.6.3",
@@ -277,10 +278,20 @@
     "redux-thunk": "^2.3.0",
     "source-map-support": "^0.5.9"
   },
+  "resolutions": {
+    "@octokit/rest":"16.33.1"
+  },
   "devEngines": {
     "node": ">=7.x",
     "npm": ">=4.x",
     "yarn": ">=0.21.3"
   },
-  "browserslist": "electron 1.6"
+  "browserslist": "electron 1.6",
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged",
+      "pre-push": "yarn test && yarn check-deps",
+      "commit-msg": "echo $HUSKY_GIT_PARAMS"
+    }
+  }
 }

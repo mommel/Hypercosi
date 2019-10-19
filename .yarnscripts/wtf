@@ -9,12 +9,13 @@ move2trash () {
 
 yarn cache clean && \
 
-move2trash node_modules && \
 move2trash yarn.lock && \
 move2trash package-lock.json && \
 move2trash dll && \
 move2trash app/dist/ && \
 move2trash ../.eslintcache || true && \\
-yarn build && \
-jest --clearCache && \
+move2trash node_modules && \
+source .
+yarn build
+jest --clearCache
 echo "Ready you can start again!"
