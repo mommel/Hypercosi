@@ -291,7 +291,7 @@
   "husky": {
     "hooks": {
       "pre-commit": "lint-staged",
-      "pre-push": "yarn test && yarn check-deps",
+      "pre-push": "yarn test --passWithNoTests && yarn check-deps",
       "commit-msg": ""
     }
   }
