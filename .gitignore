@@ -71,3 +71,4 @@ release/
 dll/*
 /dll/renderer.json
 /dll/renderer.dev.dll.js
+/flow-typed/npm
