@@ -1,12 +1,15 @@
 .container {
   position: absolute;
-  top: 30%;
-  left: 10px;
-  text-align: center;
+  top: 0;
+  left: 0;
+}
+.container img {
+  height: 60px;
 }
 
 .container h2 {
-  font-size: 5rem;
+  font-size: 2rem;
+  color: #e9ebee;
 }
 
 .container a {
