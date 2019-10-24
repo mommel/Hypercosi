@@ -1,14 +1,14 @@
 // @flow
-import { app, BrowserWindow, dialog, Menu, shell } from 'electron';
+import { app, BrowserWindow, dialog, Menu, shell } from 'electron'
 
 export default class MenuBuilder {
-  mainWindow: BrowserWindow;
+  mainWindow: BrowserWindow
 
-  constructor(mainWindow: BrowserWindow) {
-    this.mainWindow = mainWindow;
+  constructor (mainWindow: BrowserWindow) {
+    this.mainWindow = mainWindow
   }
 
-  buildMenu() {
+  buildMenu () {
     /*
       const showMessage = message =>
       dialog.showMessageBox({
@@ -21,43 +21,43 @@ export default class MenuBuilder {
       process.env.NODE_ENV === 'development' ||
       process.env.DEBUG_PROD === 'true'
     ) {
-      this.setupDevelopmentEnvironment();
+      this.setupDevelopmentEnvironment()
     }
 
     const template =
       process.platform === 'darwin'
         ? this.buildDarwinTemplate()
-        : this.buildDefaultTemplate();
+        : this.buildDefaultTemplate()
 
-    const menu = Menu.buildFromTemplate(template);
-    Menu.setApplicationMenu(menu);
+    const menu = Menu.buildFromTemplate(template)
+    Menu.setApplicationMenu(menu)
 
-    return menu;
+    return menu
   }
 
-  setupDevelopmentEnvironment() {
-    this.mainWindow.openDevTools();
+  setupDevelopmentEnvironment () {
+    this.mainWindow.openDevTools()
     this.mainWindow.webContents.on('context-menu', (e, props) => {
-      const { x, y } = props;
+      const { x, y } = props
 
       Menu.buildFromTemplate([
         {
           label: 'Inspect element',
           click: () => {
-            this.mainWindow.inspectElement(x, y);
-          }
-        }
-      ]).popup(this.mainWindow);
-    });
+            this.mainWindow.inspectElement(x, y)
+          },
+        },
+      ]).popup(this.mainWindow)
+    })
   }
 
-  buildDarwinTemplate() {
+  buildDarwinTemplate () {
     const subMenuAbout = {
       label: 'HyperCoSi',
       submenu: [
         {
           label: 'About HyperCosi',
-          selector: 'orderFrontStandardAboutPanel:'
+          selector: 'orderFrontStandardAboutPanel:',
         },
         { type: 'separator' },
         { label: 'Services', submenu: [] },
@@ -65,12 +65,12 @@ export default class MenuBuilder {
         {
           label: 'Hide ElectronReact',
           accelerator: 'Command+H',
-          selector: 'hide:'
+          selector: 'hide:',
         },
         {
           label: 'Hide Others',
           accelerator: 'Command+Shift+H',
-          selector: 'hideOtherApplications:'
+          selector: 'hideOtherApplications:',
         },
         { label: 'Show All', selector: 'unhideAllApplications:' },
         { type: 'separator' },
@@ -78,27 +78,43 @@ export default class MenuBuilder {
           label: 'Quit',
           accelerator: 'Command+Q',
           click: () => {
-            app.quit();
-          }
-        }
-      ]
-    };
+            app.quit()
+          },
+        },
+      ],
+    }
     const subMenuEdit = {
       label: 'Edit',
       submenu: [
-        { label: 'Undo', accelerator: 'Command+Z', selector: 'undo:' },
-        { label: 'Redo', accelerator: 'Shift+Command+Z', selector: 'redo:' },
+        {
+          label: 'Undo',
+          accelerator: 'Command+Z',
+          selector: 'undo:',
+        },
+        {
+          label: 'Redo',
+          accelerator: 'Shift+Command+Z',
+          selector: 'redo:',
+        },
         { type: 'separator' },
         { label: 'Cut', accelerator: 'Command+X', selector: 'cut:' },
-        { label: 'Copy', accelerator: 'Command+C', selector: 'copy:' },
-        { label: 'Paste', accelerator: 'Command+V', selector: 'paste:' },
+        {
+          label: 'Copy',
+          accelerator: 'Command+C',
+          selector: 'copy:',
+        },
+        {
+          label: 'Paste',
+          accelerator: 'Command+V',
+          selector: 'paste:',
+        },
         {
           label: 'Select All',
           accelerator: 'Command+A',
-          selector: 'selectAll:'
-        }
-      ]
-    };
+          selector: 'selectAll:',
+        },
+      ],
+    }
     const subMenuViewDev = {
       label: 'View',
       submenu: [
@@ -106,25 +122,27 @@ export default class MenuBuilder {
           label: 'Reload',
           accelerator: 'Command+R',
           click: () => {
-            this.mainWindow.webContents.reload();
-          }
+            this.mainWindow.webContents.reload()
+          },
         },
         {
           label: 'Toggle Full Screen',
           accelerator: 'Ctrl+Command+F',
           click: () => {
-            this.mainWindow.setFullScreen(!this.mainWindow.isFullScreen());
-          }
+            this.mainWindow.setFullScreen(
+              !this.mainWindow.isFullScreen(),
+            )
+          },
         },
         {
           label: 'Toggle Developer Tools',
           accelerator: 'Alt+Command+I',
           click: () => {
-            this.mainWindow.toggleDevTools();
-          }
-        }
-      ]
-    };
+            this.mainWindow.toggleDevTools()
+          },
+        },
+      ],
+    }
     const subMenuViewProd = {
       label: 'View',
       submenu: [
@@ -132,91 +150,95 @@ export default class MenuBuilder {
           label: 'Toggle Full Screen',
           accelerator: 'Ctrl+Command+F',
           click: () => {
-            this.mainWindow.setFullScreen(!this.mainWindow.isFullScreen());
-          }
-        }
-      ]
-    };
+            this.mainWindow.setFullScreen(
+              !this.mainWindow.isFullScreen(),
+            )
+          },
+        },
+      ],
+    }
     const subMenuWindow = {
       label: 'Window',
       submenu: [
         {
           label: 'Minimize',
           accelerator: 'Command+M',
-          selector: 'performMiniaturize:'
+          selector: 'performMiniaturize:',
         },
         {
           label: 'Close',
           accelerator: 'Command+W',
-          selector: 'performClose:'
+          selector: 'performClose:',
         },
         { type: 'separator' },
-        { label: 'Bring All to Front', selector: 'arrangeInFront:' }
-      ]
-    };
+        { label: 'Bring All to Front', selector: 'arrangeInFront:' },
+      ],
+    }
     const subMenuHelp = {
       label: 'Help',
       submenu: [
         {
           label: 'Learn More',
-          click() {
-            shell.openExternal('http://electron.atom.io');
-          }
+          click () {
+            shell.openExternal('http://electron.atom.io')
+          },
         },
         {
           label: 'Documentation',
-          click() {
+          click () {
             shell.openExternal(
-              'https://github.com/atom/electron/tree/master/docs#readme'
-            );
-          }
+              'https://github.com/atom/electron/tree/master/docs#readme',
+            )
+          },
         },
         {
           label: 'Community Discussions',
-          click() {
-            shell.openExternal('https://discuss.atom.io/c/electron');
-          }
+          click () {
+            shell.openExternal('https://discuss.atom.io/c/electron')
+          },
         },
         {
           label: 'Search Issues',
-          click() {
-            shell.openExternal('https://github.com/atom/electron/issues');
-          }
-        }
-      ]
-    };
+          click () {
+            shell.openExternal(
+              'https://github.com/atom/electron/issues',
+            )
+          },
+        },
+      ],
+    }
 
     const subMenuView =
       process.env.NODE_ENV === 'development'
         ? subMenuViewDev
-        : subMenuViewProd;
+        : subMenuViewProd
 
     return [
       subMenuAbout,
       subMenuEdit,
       subMenuView,
       subMenuWindow,
-      subMenuHelp
-    ];
+      subMenuHelp,
+    ]
   }
 
-  buildDefaultTemplate() {
+  buildDefaultTemplate () {
     const templateDefault = [
       {
         label: '&File',
         submenu: [
           {
             label: '&Open',
-            accelerator: 'Ctrl+O'
+            accelerator: 'Ctrl+O',
           },
           {
             label: '&Close',
             accelerator: 'Ctrl+W',
             click: () => {
-              this.mainWindow.close();
-            }
-          }
-        ]
+              this.mainWindow.close()
+            },
+          },
+        ],
       },
       {
         label: '&View',
@@ -227,25 +249,25 @@ export default class MenuBuilder {
                   label: '&Reload',
                   accelerator: 'Ctrl+R',
                   click: () => {
-                    this.mainWindow.webContents.reload();
-                  }
+                    this.mainWindow.webContents.reload()
+                  },
                 },
                 {
                   label: 'Toggle &Full Screen',
                   accelerator: 'F11',
                   click: () => {
                     this.mainWindow.setFullScreen(
-                      !this.mainWindow.isFullScreen()
-                    );
-                  }
+                      !this.mainWindow.isFullScreen(),
+                    )
+                  },
                 },
                 {
                   label: 'Toggle &Developer Tools',
                   accelerator: 'Alt+Ctrl+I',
                   click: () => {
-                    this.mainWindow.toggleDevTools();
-                  }
-                }
+                    this.mainWindow.toggleDevTools()
+                  },
+                },
               ]
             : [
                 {
@@ -253,11 +275,11 @@ export default class MenuBuilder {
                   accelerator: 'F11',
                   click: () => {
                     this.mainWindow.setFullScreen(
-                      !this.mainWindow.isFullScreen()
-                    );
-                  }
-                }
-              ]
+                      !this.mainWindow.isFullScreen(),
+                    )
+                  },
+                },
+              ],
       },
       {
         role: 'help',
@@ -270,13 +292,13 @@ export default class MenuBuilder {
                 type: 'info',
                 title: 'about',
                 message: ``,
-                buttons: ['Close']
-              })
-          }
-        ]
-      }
-    ];
+                buttons: ['Close'],
+              }),
+          },
+        ],
+      },
+    ]
 
-    return templateDefault;
+    return templateDefault
   }
 }

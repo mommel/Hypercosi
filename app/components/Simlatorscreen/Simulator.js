@@ -1,19 +1,23 @@
 // @flow
-import React, { Component } from 'react';
-import styles from './Simulator.css';
-import banner from '../../images/banner.png';
+import React, { Component } from 'react'
+//import styles from './Simulator.css'
+import banner from '../../images/banner.png'
 
-type Props = {};
+type Props = {}
 
 export default class Simulator extends Component<Props> {
-  props: Props;
+  props: Props
 
-  render() {
+  render () {
     return (
-      <div simulatorbg className={styles.container} data-tid="container">
+      <div
+        simulatorbg
+        className={styles.container}
+        data-tid="container"
+      >
         <img alt="logo" src={banner} />
         <h2>Simulator</h2>
       </div>
-    );
+    )
   }
 }
