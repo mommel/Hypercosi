@@ -1,17 +1,3 @@
-.container {
-  position: absolute;
-  top: 0;
-  left: 0;
-}
-.container img {
-  height: 60px;
-}
-
-.container h2 {
-  font-size: 2rem;
-  color: #e9ebee;
-}
-
-.container a {
-  font-size: 1.4rem;
+:local(.container) {
+  background-color: #232c39;
 }

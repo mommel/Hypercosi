@@ -1,11 +1,14 @@
-import type { Dispatch as ReduxDispatch, Store as ReduxStore } from 'redux';
+import type {
+  Dispatch as ReduxDispatch,
+  Store as ReduxStore,
+} from 'redux'
 
 export type Action = {
-  +type: string
-};
+  +type: string,
+}
 
-export type GetState = () => RootState;
+export type GetState = () => RootState
 
-export type Dispatch = ReduxDispatch<Action>;
+export type Dispatch = ReduxDispatch<Action>
 
-export type Store = ReduxStore<GetState, Action>;
+export type Store = ReduxStore<GetState, Action>

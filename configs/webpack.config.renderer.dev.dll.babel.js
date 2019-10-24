@@ -4,16 +4,16 @@
  * Builds the DLL for development electron renderer process
  */
 
-import webpack from 'webpack';
-import path from 'path';
-import merge from 'webpack-merge';
-import baseConfig from './webpack.config.base';
-import { dependencies } from '../package.json';
-import CheckNodeEnv from '../internals/scripts/CheckNodeEnv';
+import webpack from 'webpack'
+import path from 'path'
+import merge from 'webpack-merge'
+import baseConfig from './webpack.config.base'
+import { dependencies } from '../package.json'
+import CheckNodeEnv from '../internals/scripts/CheckNodeEnv'
 
-CheckNodeEnv('development');
+CheckNodeEnv('development')
 
-const dist = path.join(__dirname, '..', 'dll');
+const dist = path.join(__dirname, '..', 'dll')
 
 export default merge.smart(baseConfig, {
   context: path.join(__dirname, '..'),
@@ -29,23 +29,24 @@ export default merge.smart(baseConfig, {
   /**
    * Use `module` from `webpack.config.renderer.dev.js`
    */
-  module: require('./webpack.config.renderer.dev.babel').default.module,
+  module: require('./webpack.config.renderer.dev.babel').default
+    .module,
 
   entry: {
-    renderer: Object.keys(dependencies || {})
+    renderer: Object.keys(dependencies || {}),
   },
 
   output: {
     library: 'renderer',
     path: dist,
     filename: '[name].dev.dll.js',
-    libraryTarget: 'var'
+    libraryTarget: 'var',
   },
 
   plugins: [
     new webpack.DllPlugin({
       path: path.join(dist, '[name].json'),
-      name: '[name]'
+      name: '[name]',
     }),
 
     /**
@@ -58,7 +59,7 @@ export default merge.smart(baseConfig, {
      * development checks
      */
     new webpack.EnvironmentPlugin({
-      NODE_ENV: 'development'
+      NODE_ENV: 'development',
     }),
 
     new webpack.LoaderOptionsPlugin({
@@ -66,9 +67,9 @@ export default merge.smart(baseConfig, {
       options: {
         context: path.join(__dirname, '..', 'app'),
         output: {
-          path: path.join(__dirname, '..', 'dll')
-        }
-      }
-    })
-  ]
-});
+          path: path.join(__dirname, '..', 'dll'),
+        },
+      },
+    }),
+  ],
+})

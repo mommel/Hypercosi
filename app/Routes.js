@@ -1,9 +1,9 @@
-import React from 'react';
-import { Switch, Route } from 'react-router';
-import routes from './constants/routes';
-import App from './containers/App';
-import HomePage from './containers/HomePage';
-import SimulatorPage from './containers/SimulatorPage';
+import React from 'react'
+import { Route, Switch } from 'react-router'
+import routes from './constants/routes'
+import App from './containers/App'
+import HomePage from './containers/HomePage'
+import SimulatorPage from './containers/SimulatorPage'
 
 export default () => (
   <App>
@@ -13,4 +13,4 @@ export default () => (
       <Route path={routes.SIMULATOR} component={SimulatorPage} />
     </Switch>
   </App>
-);
+)

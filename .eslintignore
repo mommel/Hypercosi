@@ -22,13 +22,18 @@ audit
 # node-waf configuration
 .lock-wscript
 
+# scripts
+internals/scripts
+configs/
+
 # Compiled binary addons (http://nodejs.org/api/addons.html)
 build/Release
 .eslintcache
 
 # Dependency directory
 # https://www.npmjs.org/doc/misc/npm-faq.html#should-i-check-my-node_modules-folder-into-git
-node_modules
+node_modules/*
+node_modules/**/*
 
 # OSX
 .DS_Store
@@ -49,6 +54,9 @@ dist
 dll
 main.js
 main.js.map
+
+# flow-typed
+flow-typed
 
 .idea
 npm-debug.log.*
