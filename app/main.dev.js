@@ -15,6 +15,9 @@ import { autoUpdater } from 'electron-updater';
 import log from 'electron-log';
 import MenuBuilder from './menu';
 
+// import installExtension, { REACT_DEVELOPER_TOOLS } from 'electron-devtools-installer';
+// import { enableLiveReload } from 'electron-compile';
+
 export default class AppUpdater {
   constructor() {
     log.transports.file.level = 'info';
@@ -67,13 +70,19 @@ app.on('ready', async () => {
     await installExtensions();
   }
 
+  if (!process) {
+    console.log('oooohhhh nooooeeess');
+  }
+  console.log(process);
+
   mainWindow = new BrowserWindow({
     show: false,
     width: 1024,
     height: 728
   });
 
-  mainWindow.loadURL(`file://${__dirname}/app.html`);
+  // mainWindow.loadURL(`file://${__dirname}/app.html`);
+  mainWindow.loadFile('app.html');
 
   // @TODO: Use 'ready-to-show' event
   //        https://github.com/electron/electron/blob/master/docs/api/browser-window.md#using-ready-to-show-event

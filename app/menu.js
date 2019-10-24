@@ -1,5 +1,5 @@
 // @flow
-import { app, Menu, shell, BrowserWindow } from 'electron';
+import { app, BrowserWindow, dialog, Menu, shell } from 'electron';
 
 export default class MenuBuilder {
   mainWindow: BrowserWindow;
@@ -9,6 +9,14 @@ export default class MenuBuilder {
   }
 
   buildMenu() {
+    /*
+      const showMessage = message =>
+      dialog.showMessageBox({
+        type: 'info',
+        message: `You activated action: "${message}"`,
+        buttons: ['Close']
+      }); */
+
     if (
       process.env.NODE_ENV === 'development' ||
       process.env.DEBUG_PROD === 'true'
@@ -45,10 +53,10 @@ export default class MenuBuilder {
 
   buildDarwinTemplate() {
     const subMenuAbout = {
-      label: 'Electron',
+      label: 'HyperCoSi',
       submenu: [
         {
-          label: 'About ElectronReact',
+          label: 'About HyperCosi',
           selector: 'orderFrontStandardAboutPanel:'
         },
         { type: 'separator' },
@@ -252,33 +260,18 @@ export default class MenuBuilder {
               ]
       },
       {
-        label: 'Help',
+        role: 'help',
         submenu: [
           {
-            label: 'Learn More',
-            click() {
-              shell.openExternal('http://electron.atom.io');
-            }
-          },
-          {
-            label: 'Documentation',
-            click() {
-              shell.openExternal(
-                'https://github.com/atom/electron/tree/master/docs#readme'
-              );
-            }
-          },
-          {
-            label: 'Community Discussions',
-            click() {
-              shell.openExternal('https://discuss.atom.io/c/electron');
-            }
-          },
-          {
-            label: 'Search Issues',
-            click() {
-              shell.openExternal('https://github.com/atom/electron/issues');
-            }
+            label: 'About',
+            accelerator: 'CmdOrCtrl+A',
+            click: () =>
+              dialog.showMessageBox({
+                type: 'info',
+                title: 'about',
+                message: ``,
+                buttons: ['Close']
+              })
           }
         ]
       }
