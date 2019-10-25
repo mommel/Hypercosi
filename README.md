@@ -53,6 +53,10 @@ $ yarn package
 
 ### Copyrights from 3rdparty Tools or assets
 
+<img src="src/pcb/tvbacklight_v2.01_Leiterplatte.png" width="100px" />
+
+
+
 #### All files in src/images/textures/
 
 - downloaded from [Subtle Patterns © Toptal Designers](https://toptal.com/designers/subtlepatterns]
