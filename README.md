@@ -49,9 +49,14 @@ $ yarn package
 - [J. Weber](https://github.com/juliamweber)
 - [Krachkind](https://github.com/krachkind)
 
-## License
+## PCB
 
+This own invented PCB Design fits perfectly to our software.
+<img src="src/pcb/tvbacklight_v2.01_Leiterplatte.png" width="200px" /> 
+
+## License
 ### Copyrights from 3rdparty Tools or assets
+
 
 #### All files in src/images/textures/
 
