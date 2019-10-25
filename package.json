@@ -37,7 +37,9 @@
     "test-watch": "yarn test --watch",
     "check-deps": ".yarnscripts/check-deps",
     "icon:update": ".yarnscripts/icons",
-    "wtf": ".yarnscripts/wtf"
+    "wtf": ".yarnscripts/wtf",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
   },
   "lint-staged": {
     "*.{js,jsx}": [
@@ -187,6 +189,10 @@
     "@babel/preset-flow": "^7.0.0",
     "@babel/preset-react": "^7.0.0",
     "@babel/register": "^7.4.0",
+    "@storybook/addon-actions": "^5.2.5",
+    "@storybook/addon-links": "^5.2.5",
+    "@storybook/addons": "^5.2.5",
+    "@storybook/react": "^5.2.5",
     "babel-core": "7.0.0-bridge.0",
     "babel-eslint": "^10.0.1",
     "babel-jest": "^24.5.0",
@@ -280,7 +286,7 @@
     "source-map-support": "^0.5.11"
   },
   "resolutions": {
-    "@octokit/rest":"16.33.1"
+    "@octokit/rest": "16.33.1"
   },
   "devEngines": {
     "node": ">=7.x",
