@@ -1,0 +1,25 @@
+#Homescreen {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 0;
+  margin: 0;
+  text-align: center;
+}
+#Homescreen h2 {
+  font-size: 5rem;
+}
+#Homescreen a {
+  font-size: 1.4rem;
+}
+#Homescreen #Applogo img {
+  width: 200px;
+}
+#Homescreen #Toolbar {
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+/*# sourceMappingURL=Homescreen.css.map */

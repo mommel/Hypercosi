@@ -1,9 +1,9 @@
 import React from 'react';
 import { linkTo } from '@storybook/addon-links';
-import { Welcome } from '@storybook/react/demo';
+import { Homescreen } from '../app/components/Homescreen/Homescreen';
 
 export default {
-  title: 'Welcome',
+  title: 'Homescreen',
 };
 
 export const toStorybook = () => <Welcome showApp={linkTo('Button')} />;

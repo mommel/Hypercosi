@@ -2,23 +2,19 @@
   "env": {
     "browser": true,
     "commonjs": true,
-    "es6": true,
-    "jest": true
+    "es2017": true,
+    "jest": true,
+    "node": true
   },
-  "extends": [
-    "airbnb"
-  ],
-  "plugins": [
-    "prettier",
-    "react",
-    "jsx-a11y",
-    "import"
-  ],
+  "extends": ["prettier"],
+  "plugins": ["prettier", "react", "jsx-a11y"],
+  "parser": "Babel-ESLint",
   "parserOptions": {
+    "ecmaVersion": 8,
+    "sourceType": "module",
     "ecmaFeatures": {
       "jsx": true
-    },
-    "sourceType": "module"
+    }
   },
   "settings": {
     "import/resolver": {
@@ -31,45 +27,5 @@
       "version": "16.8.6"
     }
   },
-  "rules": {
-    "no-param-reassign": [
-      0,
-      {
-        "props": true
-      }
-    ],
-    "array-bracket-newline": "error",
-    "no-constant-condition": 0,
-    "prefer-template": 0,
-    "no-var": 2,
-    "object-curly-newline": 2,
-    "comma-style": 2,
-    "semi": [2, "never"],
-    "camelcase": [
-      2,
-      {
-        "properties": "always"
-      }
-    ],
-    "space-before-blocks": [2, "always"],
-    "space-before-function-paren": [2, "always"],
-    "no-func-assign": "error",
-    "no-dynamic-require": 0,
-    "no-self-import": 0,
-    "spaced-comment": [
-      2,
-      "always",
-      {
-        "line": { "markers": ["*package", "!", ","] },
-        "block": {
-          "balanced": true,
-          "markers": ["*package", "!", ","],
-          "exceptions": ["*"]
-        }
-      }
-    ],
-    "comma-dangle": [2, "always-multiline"],
-    "semi-spacing": [2, { "before": false, "after": true }],
-    "no-undef": "off"
-  }
+  "rules": {}
 }

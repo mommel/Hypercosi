@@ -1,0 +1,28 @@
+{
+  "extends": ["eslint:recommended", "prettier"],
+  "env": {
+    "browser": true,
+    "commonjs": true,
+    "es6": true,
+    "jest": true
+  },
+  "plugins": ["prettier", "react", "jsx-a11y", "import"],
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "sourceType": "module"
+  },
+  "settings": {
+    "import/resolver": {
+      "webpack": {
+        "config": "configs/webpack.config.eslint.js"
+      }
+    },
+    "react": {
+      "pragma": "React",
+      "version": "16.8.6"
+    }
+  },
+  "rules": {}
+}

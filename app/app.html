@@ -7,8 +7,6 @@
       content="width=device-width, initial-scale=1, shrink-to-fit=no"
     />
     <meta name="theme-color" content="#000000" />
-    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
-    <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico" />
     <title>hyperCoSi - Hyperion Configurator and Simulator</title>
     <link
       href="../node_modules/@blueprintjs/core/lib/css/blueprint.css"
@@ -20,12 +18,14 @@
     />
     <script>
       (function() {
-        if (!process.env.HOT) {
+        if (!(process.env.HOT || process.env.REACT_APP_HOT)) {
           const link = document.createElement('link')
           link.rel = 'stylesheet'
           link.href = './dist/style.css'
           // HACK: Writing the script path should be done with webpack
           document.getElementsByTagName('head')[0].appendChild(link)
+        }else {
+          console.log('\n*** Getting HOT in app.html ***\n')
         }
       })()
     </script>
@@ -39,16 +39,25 @@
         // Dynamically insert the DLL script in development env in the
         // renderer process
         if (process.env.NODE_ENV === 'development') {
+          console.log('\n*** Getting dev in app.html ***\n')
           scripts.push('../dll/renderer.dev.dll.js')
         }
 
         // Dynamically insert the bundled app script in the renderer process
-        const port = process.env.PORT || 1212
+        if(process.env.PORT || process.env.REACT_APP_PORT ){
+          console.log('\n*** Getting port in app.html ***\n')
+        }
+        const port = (process.env.PORT || process.env.REACT_APP_PORT ) || 1212
         scripts.push(
-          process.env.HOT
+          (process.env.HOT || process.env.REACT_APP_HOT)
             ? 'http://localhost:' + port + '/dist/renderer.dev.js'
             : './dist/renderer.prod.js',
         )
+        if (process.env.HOT || process.env.REACT_APP_HOT) {
+          console.log('\n*** Pushing localhost in app.html ***\n')
+        } else {
+          console.log('\n*** Pushing dist-renderer.prod in app.html ***\n')
+        }
 
         document.write(
           scripts

@@ -52,18 +52,33 @@ $ yarn package
 ## PCB
 
 This own invented PCB Design fits perfectly to our software.
+
 <img src="src/pcb/tvbacklight_v2.01_Leiterplatte.png" width="200px" /> 
 
 ## License
-### Copyrights from 3rdparty Tools or assets
 
+#### HyperCoSi
+is Copyrighted by the Maintainers listed in this README licensed below [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/)  
+
+#### HyperCoSi-PCB
+is Copyright by Mommel and licensed below
+[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/)
+
+#### Dependencies
+All files in node_modules have their own licenses
+    * [Electron](https://electronjs.org/) - [MIT](https://github.com/electron/electron/blob/master/LICENSE)
+    * React
+    * Redux
+    * [Webpack](https://webpack.js.org) - [MIT](https://webpack.js.org/license/)
+    * [React-Photonkit](http://react-photonkit.github.io/) - [MIT](https://github.com/react-photonkit/react-photonkit/blob/master/license) 
+    * ...
+
+Thaks to [electron-react-boilerplate](https://github.com/chentsulin/electron-react-boilerplate) for good inspirations
 
 #### All files in src/images/textures/
-
 - downloaded from [Subtle Patterns © Toptal Designers](https://toptal.com/designers/subtlepatterns]
 - Copyright [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)
 
-#### All files in node_modules have theor own licenses
 
 [github-tag-image]: https://img.shields.io/github/tag/mommel/hypercosi.svg?label=version
 [github-tag-url]: https://github.com/mommel/hypercosi/releases/latest
