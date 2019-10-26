@@ -292,8 +292,7 @@
     "webpack-cli": "^3.3.0",
     "webpack-dev-server": "^3.2.1",
     "webpack-merge": "^4.2.1",
-    "webpack-node-externals": "^1.7.2",
-    "yarn": "^1.15.2"
+    "webpack-node-externals": "^1.7.2"
   },
   "dependencies": {
     "@blueprintjs/core": "^3.19.1",
