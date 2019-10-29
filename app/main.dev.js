@@ -8,23 +8,15 @@
  *
  * @flow
  */
-// import TrayIcon from "./utils/system/trayIcon";
-// import tbColorPicker from "./utils/system/touchbarColorPicker";
 
 const { app, BrowserWindow, systemPreferences, nativeTheme } = require('electron')
 const config = require('./config')
 const { hot } = require ('react-hot-loader/root')
-const { autoUpdater } = require('electron-updater')
-const { log } = require('electron-log');
+// const { autoUpdater } = require('electron-updater')
+// const { log } = require('electron-log')
+const { menu } = require('./utils/system/menu')
 
-// const path = require('path');
-// const url = require('url');
-// const { installExtension, REACT_DEVELOPER_TOOLS } = require('electron-devtools-installer');
-// const { ElectronSystem } = require('./utils/electron-combined');
-// const { MenuBuilder } = require ('./utils/menu')
-// const jetpack = require('fs-jetpack')
-
-
+/*
 export default class AppUpdater {
   constructor() {
     log.transports.file.level = 'info';
@@ -32,23 +24,21 @@ export default class AppUpdater {
     autoUpdater.checkForUpdatesAndNotify();
   }
 }
-
+*/
 let mainWindow = null;
 
 const createMainWindow = starthot =>  {
   const is2nd = process.argv.indexOf('--2nd') >= 0;
-  const icon =
-    (
-      ( process.platform === 'darwin') ? config.APP_FILE_ICON : (
-      ( process.platform === 'windows') ? config.APP_ICON :
-        config.APP_FILE_ICON))
-  if ( process.platform === 'darwin'){
-    //if ( ! app.isInApplicationsFolder() ){
-      //app.moveToApplicationsFolder()
-      //app.dock.setIcon(config.APP_FILE_ICON)
-    //}
-  }
-  //const language = app.getLocale()
+  const icon = (
+      ( process.platform === 'darwin' )
+        ? config.APP_FILE_ICON
+        :(
+          ( process.platform === 'windows' )
+            ? config.APP_ICON
+            : config.APP_FILE_ICON
+        )
+      )
+  console.log(icon)
   const opts = {
     show: false,
     minWidth: 1200,
@@ -59,7 +49,7 @@ const createMainWindow = starthot =>  {
     webPreferences: {
       nodeIntegration: true,
     },
-    icon: icon,
+    //icon: icon,
     titleBarStyle: 'default',
     darkTheme: nativeTheme.shouldUseDarkColors,
     defaultFontFamily: {
@@ -76,31 +66,27 @@ const createMainWindow = starthot =>  {
   win.loadFile('app.html')
   win.on('closed', onClosed);
   
-  if ( process.platform === 'darwin') {
-    //const trayIcon = new TrayIcon()
-    //const colorPicker = new tbColorPicker().create()
+  if( process.env.REACT_APP_SECURED && process.platform === 'darwin' ) {
+    systemPreferences.promptTouchID('To get consent for a Security-Gated Thing').then(success => {
+      console.log('You have successfully authenticated with Touch ID!')
+    }).catch(err => {
+      console.log(err)
+    })
   }
-  
-  /*
-  if (menu) {
-    Menu.setApplicationMenu(menu);
-    menu = null;
-  }
-  */
-  
-  systemPreferences.promptTouchID('To get consent for a Security-Gated Thing').then(success => {
-    console.log('You have successfully authenticated with Touch ID!')
-  }).catch(err => {
-    console.log(err)
-  })
   
   win.on('ready-to-show', () => {
     console.log('***** WIN READY-TO-SHOW *****')
     if (!win) {
       throw new Error('"mainWindow" is not defined');
     }
+  
+    // Setup Menu
+    if (menu) {
+      Menu.setApplicationMenu(menu);
+    }
 
-//    const traymenu = require('utils/traymenu')
+    console.log(config.APP_FILE_ICON)
+    //const traymenu = require('./utils/system/traymenu')
     
     if (process.env.START_MINIMIZED
     || process.env.REACT_APP_START_MINIMIZED
@@ -127,7 +113,7 @@ const onClosed = () => {
 }
 
 function setOptsForDualScreen(opts) {
-  console.log('***** SET OPS FOR DS *****')
+  //console.log('***** SET OPS FOR DS *****')
   const atomScreen = require('screen');
   const displays = atomScreen.getAllDisplays();
   const d2 = displays.length > 1 ? displays[1] : null;
@@ -141,7 +127,7 @@ if (process.env.NODE_ENV === 'production') {
   const sourceMapSupport = require('source-map-support');
   sourceMapSupport.install();
 }
-
+/*
 if (
   process.env.NODE_ENV === 'development'
   || process.env.DEBUG_PROD === 'true'
@@ -179,5 +165,5 @@ app.on('ready', () => {
   ))
   
   // eslint-disable-next-line
-  new AppUpdater()
+  //new AppUpdater()
 });

@@ -5,14 +5,12 @@ if [ $(git rev-parse --show-toplevel) != $(pwd) ]; then
   exit 2
 fi
 
-
 ENV=$(echo "development staging production" | ipt -s " "| xargs echo)
 VERSIONCHANGE=$(echo "patch minor major none" | ipt -s " "| xargs echo)
 if [ "${ENV}" == "development" ]; then
     echo "That environment is not yet supported for deployment"
     exit 0
 fi
-
 
 echo "╔═════════════╗"
 echo "║ PULLING GIT ║"

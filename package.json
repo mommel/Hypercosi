@@ -151,7 +151,7 @@
   },
   "author": {
     "name": "Mommel",
-    "email": "mommel@users.noreply.github.com",
+    "email": "hypercosi@gmail.com",
     "url": "https://github.com/Mommel"
   },
   "contributors": [
@@ -298,6 +298,7 @@
     "@blueprintjs/core": "^3.19.1",
     "@fortawesome/fontawesome-free": "^5.8.1",
     "@hot-loader/react-dom": "^16.8.6",
+    "about-window": "^1.13.1",
     "connected-react-router": "^6.3.2",
     "core-js": "2",
     "devtron": "^1.4.0",

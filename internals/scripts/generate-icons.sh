@@ -5,8 +5,29 @@ if [ $(git rev-parse --show-toplevel) != $(pwd) ]; then
   exit 2
 fi
 
+PROJECTROOT=$(git rev-parse --show-toplevel)
+INPUTFILE="${PROJECTROOT}/internals/img/hyperCoSi_icon.png"
+APPICONS="${PROJECTROOT}/app/images/icons"
+RESOUCES="${PROJECTROOT}/resources"
 
-DIRNAME=$(dirname "$0")
-echo "DIRNAME: ${DIRNAME}"
-echo "INPUT PARAM: ${DIRNAME}/internals/img/hyperCoSi_icon.png"
-yarn electron-icon-maker --input=${DIRNAME}/../internals/img/hyperCoSi_icon.png --output=./resources/
+if [[ ! -f "${INPUTFILE}" ]]; then
+    echo " ERROR INPUT FILE NOT FOUND"
+    echo "${INPUTFILE} needs to exist"
+    exit 1
+fi
+echo "║"
+echo "║ Running electron-icon-maker on"
+echo "║ ${INPUTFILE}"
+echo "║"
+yarn electron-icon-maker --input="${INPUTFILE}" --output="${RESOUCES}/"
+echo "║"
+echo "║ Removing icons folder from app/images"
+echo "║"
+echo " "
+rm -rf ${APPICONS}
+echo "║"
+echo "║ Recreating files in app/images"
+echo "║"
+mkdir ${APPICONS}
+cp -R ${PROJECTROOT}/resources/icons/ ${APPICONS}/
+cp  ${PROJECTROOT}/resources/icon.png ${APPICONS}/icon.png
