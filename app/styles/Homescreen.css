@@ -1,3 +1,8 @@
+/* eslint-disable */
+body {
+  background: transparent;
+}
+
 #Homescreen {
   position: absolute;
   top: 0;
@@ -6,16 +11,16 @@
   margin: 0;
   text-align: center;
 }
-#Homescreen h2 {
+#Homescreen .screentitle {
   font-size: 5rem;
 }
 #Homescreen a {
   font-size: 1.4rem;
 }
-#Homescreen #Applogo img {
+#Homescreen .applogo img {
   width: 200px;
 }
-#Homescreen #Toolbar {
+#Homescreen .toolbar {
   width: 100%;
   position: absolute;
   top: 0;

@@ -1,4 +1,4 @@
-// @import 'global-variables';
+@import 'global-variables';
 // $namespace: 'HomeScreen';
 
 #Homescreen {
@@ -9,7 +9,7 @@
   margin: 0;
   text-align: center;
 
-  h2 {
+  .screentitle {
     font-size: 5rem;
   }
 
@@ -18,12 +18,12 @@
   }
 
 
-  #Applogo {
+  .applogo {
     img {
       width:200px;
     }
   }
-  #Toolbar {
+  .toolbar {
     width: 100%;
     position: absolute;
     top:0;

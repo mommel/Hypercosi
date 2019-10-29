@@ -12,13 +12,13 @@ module.exports = {
   APP_COPYRIGHT: `Copyright © 2019- ${appTeam}`,
   APP_FILE_ICON: path.join(
     __dirname,
-    'resources',
+    'images',
     'icons',
     'mac',
-    'icons.icns',
+    'icon.icns',
   ),
   APP_ICON: path.join(__dirname,
-    'resources',
+    'images',
     'icons',
     'win',
     'icon.ico'

@@ -9,22 +9,14 @@
  * @flow
  */
 
-const { app, BrowserWindow, systemPreferences, nativeTheme } = require('electron')
+const { app, BrowserWindow, crashReporter,
+  nativeTheme, Menu, dialog  } = require('electron')
+const join = require('path').join;
+const isMac = process.platform === 'darwin'
+const openAboutWindow = require('about-window').default;
 const config = require('./config')
 const { hot } = require ('react-hot-loader/root')
-// const { autoUpdater } = require('electron-updater')
-// const { log } = require('electron-log')
-const { menu } = require('./utils/system/menu')
 
-/*
-export default class AppUpdater {
-  constructor() {
-    log.transports.file.level = 'info';
-    autoUpdater.logger = log;
-    autoUpdater.checkForUpdatesAndNotify();
-  }
-}
-*/
 let mainWindow = null;
 
 const createMainWindow = starthot =>  {
@@ -38,9 +30,85 @@ const createMainWindow = starthot =>  {
             : config.APP_FILE_ICON
         )
       )
-  console.log(icon)
+  
+  const menuTemplate = [
+    // { role: 'appMenu' }
+    ...(isMac ? [{
+      label: 'HyperCoSi',
+      submenu: [
+        {
+          label: 'About This App',
+          click: () =>
+            openAboutWindow({
+              product_name: 'HyperCoSi',
+              use_version_info: true,
+              adjust_window_size: true,
+              icon_path: join(__dirname, 'images', 'icon.png'),
+              copyright: 'Copyright (c) 2019 HyperCosi Team',
+              description: 'We like smooth enlightments.',
+              licencse: 'MIT',
+              homepage: 'https://mommel.github.io/Hypercosi/',
+              package_json_dir: join(__dirname, 'package.json'),
+              open_devtools: process.env.NODE_ENV !== 'production',
+            }),
+        },
+        { type: 'separator' },
+        { role: 'quit' }
+      ]
+    }] : []),
+    // { role: 'fileMenu' }
+    {
+      label: 'File',
+      submenu: [
+        {
+          label: 'Open',
+          click: () => { dialog.showOpenDialog(
+            mainWindow, {
+              defaultPath: '~/',
+              properties: ['openFile', 'openDirectory'],
+              message: 'OBEN',
+              filters: [
+                { name: 'HyperCoSi Workspace', extensions: ['hsc'] },
+                { name: 'All Files', extensions: ['*'] }
+              ]
+            }).then(result => {
+            console.log(result.canceled)
+            console.log(result.filePaths)
+          }).catch(err => {
+            console.log(err)
+          })}
+        },
+        {
+          label: 'Save',
+          click: () => { dialog.showSaveDialogSync()}
+        },
+        isMac ? { role: 'close' } : { role: 'quit' }
+      ]
+    },
+    {
+      role: 'help',
+      submenu: [
+        {
+          label: 'Learn More',
+          click: () => {
+            let child = new BrowserWindow({ parent: 0, modal: true, show: false })
+            child.loadURL('https://github.com/mommel/Hypercosi/wiki')
+            child.once('ready-to-show', () => {
+              child.show()
+            })
+          }
+        }
+      ]
+    }
+  ]
+  
+  const menu = Menu.buildFromTemplate(menuTemplate)
+  Menu.setApplicationMenu(menu);
+  
   const opts = {
     show: false,
+    Width: 1600,
+    Height: 800,
     minWidth: 1200,
     minHeight: 600,
     center: true,
@@ -49,7 +117,7 @@ const createMainWindow = starthot =>  {
     webPreferences: {
       nodeIntegration: true,
     },
-    //icon: icon,
+    icon: icon,
     titleBarStyle: 'default',
     darkTheme: nativeTheme.shouldUseDarkColors,
     defaultFontFamily: {
@@ -57,6 +125,7 @@ const createMainWindow = starthot =>  {
     },
     defaultFontSize: 12
   }
+  
   
   if (is2nd) {
     setOptsForDualScreen(opts);
@@ -79,14 +148,6 @@ const createMainWindow = starthot =>  {
     if (!win) {
       throw new Error('"mainWindow" is not defined');
     }
-  
-    // Setup Menu
-    if (menu) {
-      Menu.setApplicationMenu(menu);
-    }
-
-    console.log(config.APP_FILE_ICON)
-    //const traymenu = require('./utils/system/traymenu')
     
     if (process.env.START_MINIMIZED
     || process.env.REACT_APP_START_MINIMIZED
@@ -96,6 +157,14 @@ const createMainWindow = starthot =>  {
       win.show()
       win.focus()
     }
+  })
+  
+  
+  crashReporter.start({
+    productName: config.APP_NAME,
+    companyName: config.APP_TEAM,
+    submitURL: config.CRASH_REPORT_URL,
+    uploadToServer: false
   })
   
   if( starthot )
@@ -113,7 +182,6 @@ const onClosed = () => {
 }
 
 function setOptsForDualScreen(opts) {
-  //console.log('***** SET OPS FOR DS *****')
   const atomScreen = require('screen');
   const displays = atomScreen.getAllDisplays();
   const d2 = displays.length > 1 ? displays[1] : null;
@@ -127,7 +195,7 @@ if (process.env.NODE_ENV === 'production') {
   const sourceMapSupport = require('source-map-support');
   sourceMapSupport.install();
 }
-/*
+
 if (
   process.env.NODE_ENV === 'development'
   || process.env.DEBUG_PROD === 'true'
@@ -163,7 +231,4 @@ app.on('ready', () => {
     process.env.NODE_ENV === 'development' && (
     process.env.HOT || process.env.REACT_APP_HOT
   ))
-  
-  // eslint-disable-next-line
-  //new AppUpdater()
 });
