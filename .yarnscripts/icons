@@ -1,5 +1,0 @@
-#!/bin/bash
-DIRNAME=$(dirname "$0")
-echo "DIRNAME: ${DIRNAME}"
-echo "INPUT PARAM: ${DIRNAME}/internals/img/hyperCoSi_icon.png"
-yarn electron-icon-maker --input=${DIRNAME}/../internals/img/hyperCoSi_icon.png --output=./resources/

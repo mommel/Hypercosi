@@ -23,7 +23,7 @@ audit
 .lock-wscript
 
 # scripts
-internals/scripts
+internals/*
 configs/
 
 # Compiled binary addons (http://nodejs.org/api/addons.html)

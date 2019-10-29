@@ -1,5 +1,3 @@
-/* eslint global-require: off */
-
 /**
  * This module executes inside of electron's main process. You can start
  * electron renderer process from here and communicate with the other processes
@@ -10,123 +8,227 @@
  *
  * @flow
  */
-import { BrowserWindow, app } from 'electron'
-import { autoUpdater } from 'electron-updater'
-import log from 'electron-log'
-import { Menu } from './components/Menu/Menu'
 
-// import installExtension, { REACT_DEVELOPER_TOOLS } from 'electron-devtools-installer';
-// import { enableLiveReload } from 'electron-compile';
+const { app, BrowserWindow, crashReporter,
+  nativeTheme, Menu, dialog  } = require('electron')
+const join = require('path').join;
+const isMac = process.platform === 'darwin'
+const openAboutWindow = require('about-window').default;
+const config = require('./config')
+const { hot } = require ('react-hot-loader/root')
 
-export default class AppUpdater {
-  constructor () {
-    log.transports.file.level = 'info'
-    autoUpdater.logger = log
-    autoUpdater.checkForUpdatesAndNotify()
+let mainWindow = null;
+
+const createMainWindow = starthot =>  {
+  const is2nd = process.argv.indexOf('--2nd') >= 0;
+  const icon = (
+      ( process.platform === 'darwin' )
+        ? config.APP_FILE_ICON
+        :(
+          ( process.platform === 'windows' )
+            ? config.APP_ICON
+            : config.APP_FILE_ICON
+        )
+      )
+  
+  const menuTemplate = [
+    // { role: 'appMenu' }
+    ...(isMac ? [{
+      label: 'HyperCoSi',
+      submenu: [
+        {
+          label: 'About This App',
+          click: () =>
+            openAboutWindow({
+              product_name: 'HyperCoSi',
+              use_version_info: true,
+              adjust_window_size: true,
+              icon_path: join(__dirname, 'images', 'icon.png'),
+              copyright: 'Copyright (c) 2019 HyperCosi Team',
+              description: 'We like smooth enlightments.',
+              licencse: 'MIT',
+              homepage: 'https://mommel.github.io/Hypercosi/',
+              package_json_dir: join(__dirname, 'package.json'),
+              open_devtools: process.env.NODE_ENV !== 'production',
+            }),
+        },
+        { type: 'separator' },
+        { role: 'quit' }
+      ]
+    }] : []),
+    // { role: 'fileMenu' }
+    {
+      label: 'File',
+      submenu: [
+        {
+          label: 'Open',
+          click: () => { dialog.showOpenDialog(
+            mainWindow, {
+              defaultPath: '~/',
+              properties: ['openFile', 'openDirectory'],
+              message: 'OBEN',
+              filters: [
+                { name: 'HyperCoSi Workspace', extensions: ['hsc'] },
+                { name: 'All Files', extensions: ['*'] }
+              ]
+            }).then(result => {
+            console.log(result.canceled)
+            console.log(result.filePaths)
+          }).catch(err => {
+            console.log(err)
+          })}
+        },
+        {
+          label: 'Save',
+          click: () => { dialog.showSaveDialogSync()}
+        },
+        isMac ? { role: 'close' } : { role: 'quit' }
+      ]
+    },
+    {
+      role: 'help',
+      submenu: [
+        {
+          label: 'Learn More',
+          click: () => {
+            let child = new BrowserWindow({ parent: 0, modal: true, show: false })
+            child.loadURL('https://github.com/mommel/Hypercosi/wiki')
+            child.once('ready-to-show', () => {
+              child.show()
+            })
+          }
+        }
+      ]
+    }
+  ]
+  
+  const menu = Menu.buildFromTemplate(menuTemplate)
+  Menu.setApplicationMenu(menu);
+  
+  const opts = {
+    show: false,
+    Width: 1600,
+    Height: 800,
+    minWidth: 1200,
+    minHeight: 600,
+    center: true,
+    kiosk: false,
+    title: config.APP_NAME,
+    webPreferences: {
+      nodeIntegration: true,
+    },
+    icon: icon,
+    titleBarStyle: 'default',
+    darkTheme: nativeTheme.shouldUseDarkColors,
+    defaultFontFamily: {
+      standard: 'Helvetica Neue',
+    },
+    defaultFontSize: 12
+  }
+  
+  
+  if (is2nd) {
+    setOptsForDualScreen(opts);
+  }
+  
+  const win = new BrowserWindow(opts);
+  win.loadFile('app.html')
+  win.on('closed', onClosed);
+  
+  if( process.env.REACT_APP_SECURED && process.platform === 'darwin' ) {
+    systemPreferences.promptTouchID('To get consent for a Security-Gated Thing').then(success => {
+      console.log('You have successfully authenticated with Touch ID!')
+    }).catch(err => {
+      console.log(err)
+    })
+  }
+  
+  win.on('ready-to-show', () => {
+    console.log('***** WIN READY-TO-SHOW *****')
+    if (!win) {
+      throw new Error('"mainWindow" is not defined');
+    }
+    
+    if (process.env.START_MINIMIZED
+    || process.env.REACT_APP_START_MINIMIZED
+    ){
+      win.minimize()
+    } else {
+      win.show()
+      win.focus()
+    }
+  })
+  
+  
+  crashReporter.start({
+    productName: config.APP_NAME,
+    companyName: config.APP_TEAM,
+    submitURL: config.CRASH_REPORT_URL,
+    uploadToServer: false
+  })
+  
+  if( starthot )
+  {
+    return hot(win)
+  } else {
+    return win;
   }
 }
 
-let mainWindow = null
-const tray = require('./utils/tray')
+const onClosed = () => {
+  // dereference the window
+  // for multiple windows store them in an array
+  mainWindow = null;
+}
+
+function setOptsForDualScreen(opts) {
+  const atomScreen = require('screen');
+  const displays = atomScreen.getAllDisplays();
+  const d2 = displays.length > 1 ? displays[1] : null;
+  if (d2) {
+    opts.x = d2.bounds.x + (d2.size.width - opts.width) / 2;
+    opts.y = d2.bounds.y + (d2.size.height - opts.height) / 2;
+  }
+}
 
 if (process.env.NODE_ENV === 'production') {
-  const sourceMapSupport = require('source-map-support')
-  sourceMapSupport.install()
+  const sourceMapSupport = require('source-map-support');
+  sourceMapSupport.install();
 }
 
 if (
-  process.env.NODE_ENV === 'development' ||
-  process.env.DEBUG_PROD === 'true'
+  process.env.NODE_ENV === 'development'
+  || process.env.DEBUG_PROD === 'true'
 ) {
-  require('electron-debug')()
-}
-
-const installExtensions = async () => {
-  const installer = require('electron-devtools-installer')
-  const forceDownload = !!process.env.UPGRADE_EXTENSIONS
-  const extensions = ['REACT_DEVELOPER_TOOLS', 'REDUX_DEVTOOLS']
-
-  return Promise.all(
-    extensions.map(name =>
-      installer.default(installer[name], forceDownload),
-    ),
-  ).catch(console.log)
+  require('electron-debug')();
 }
 
 /**
  * Add event listeners...
  */
 
-app.on('window-all-closed', e => {
-  // Respect the OSX convention of having the application in memory even
-  // after all windows have been closed
+app.on('window-all-closed', (e) => {
   if (process.platform !== 'darwin' && !tray.hasTray()) {
-    app.quit()
+    app.quit();
   } else if (!app.isQuitting) {
-    e.preventDefault()
-    mainWindow.hide()
+    e.preventDefault();
+    mainWindow.hide();
   }
-})
+});
 
-app.on('ready', async () => {
+
+// app.on('ready', async () => {
+app.on('ready', () => {
+  console.log('***** APP READY *****')
   if (
-    process.env.NODE_ENV === 'development' ||
-    process.env.DEBUG_PROD === 'true'
+    process.env.NODE_ENV === 'development'
+    || ( process.env.DEBUG_PROD === 'true'
+    || process.env.REACT_APP_DEBUG_PROD === 'true')
   ) {
-    await installExtensions()
+    // require('devtron').install()
   }
-
-  mainWindow = new BrowserWindow({
-    show: false,
-    width: 1024,
-    height: 728,
-    webPreferences: {
-      nodeIntegration: true,
-    },
-    titleBarStyle: 'hidden-inset',
-    darkTheme: true,
-    icon: getIconPath(),
-  })
-
-  const menu = new Menu()
-
-  // mainWindow.loadURL(`file://${__dirname}/app.html`);
-  mainWindow.loadFile('app.html')
-
-  // @TODO: Use 'ready-to-show' event
-  //        https://github.com/electron/electron/blob/master/docs/api/browser-window.md#using-ready-to-show-event
-  mainWindow.webContents.on('did-finish-load', () => {
-    if (!mainWindow) {
-      throw new Error('"mainWindow" is not defined')
-    }
-    if (process.env.START_MINIMIZED) {
-      mainWindow.minimize()
-    } else {
-      mainWindow.show()
-      mainWindow.focus()
-    }
-  })
-
-  mainWindow.on('blur', () => {
-    menuBuilder.onWindowBlur()
-    tray.onWindowBlur()
-  })
-
-  mainWindow.on('focus', () => {
-    menuBuilder.onWindowFocus()
-    tray.onWindowFocus()
-  })
-
-  const getIconPath = () => {
-    return process.platform === 'win32'
-      ? config.APP_ICON + '.ico'
-      : config.APP_ICON + '.png'
-  }
-
-  mainWindow.on('closed', () => {
-    mainWindow = null
-  })
-  // Remove this if your app does not use auto updates
-  // eslint-disable-next-line
-  new AppUpdater()
-})
+  mainWindow = createMainWindow(
+    process.env.NODE_ENV === 'development' && (
+    process.env.HOT || process.env.REACT_APP_HOT
+  ))
+});

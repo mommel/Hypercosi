@@ -1,0 +1,14 @@
+.simulatorscreencontainer {
+  position: absolute;
+  top: 30%;
+  left: 10px;
+  text-align: center;
+}
+.simulatorscreencontainer h2 {
+  font-size: 5rem;
+}
+.simulatorscreencontainer a {
+  font-size: 1.4rem;
+}
+
+/*# sourceMappingURL=Simulatorscreen.css.map */
