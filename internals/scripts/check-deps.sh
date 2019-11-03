@@ -11,6 +11,6 @@ if [ ! -d "${DIRNAME}/audit" ]; then
     mkdir ${DIRNAME}/audit
 fi
 echo "" > ${DIRNAME}/audit/audit-output.json
-yarn audit --json > ${DIRNAME}/audit/audit-output.json
+yarn audit --json > ${DIRNAME}/../../audit/audit-output.json
 yarn audit
 exit 0

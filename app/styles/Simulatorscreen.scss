@@ -1,17 +1,404 @@
-// @import 'global-variables';
+@import 'global-variables';
+
 // $namespace: 'Simulatorscreen';
 
+$heightFloor: 145px;
+$screenWidth: 1584px;
+$tvStandWidth: 904px;
+
+$topPlateColor: #d1d1d1;
+$highlightColor: #d32faf;
+
 .simulatorscreencontainer {
-  position: absolute;
-  top: 30%;
-  left: 10px;
-  text-align: center;
-
+  background-position-x: center;
+  background-position-y: top;
+  background: rgb(174,193,208);
+  background: linear-gradient(70deg,
+          rgba(174,193,208,1) 0%, rgba(193,199,221,1) 26%,
+          rgba(209,209,228,1) 35%, rgba(193,205,221,1) 55%,
+          rgb(201, 214, 208) 69%, rgb(203, 208, 214) 81%,
+          rgb(205, 225, 231) 89%, rgb(190, 194, 204) 100%
+  );
+  // background-image: url('../images/background/textures/white-waves/white-waves.png');
+  height: 1000px;
+  width: 100%;
   h2 {
-    font-size: 5rem;
+    color: #222;
+  }
+}
+
+.roomInterieurBorder {
+  height: 20px;
+  width: $screenWidth;
+  position: absolute;
+  bottom : $heightFloor;
+  left:0;
+  box-shadow:
+          -2px 6px 4px -2px rgba(9, 9, 5, 0.5);
+  background: linear-gradient(to bottom,
+          rgba(86,86,86,0.99) 0%,rgba(114,114,114,0.99) 2%,rgba(142,142,142,0.99) 4%,rgba(175,175,175,1) 8%,
+          rgba(216,216,216,1) 13%,rgba(181,181,181,1) 36%,rgba(193,193,193,1) 44%,rgba(153,153,153,1) 51%,
+          rgba(181,181,181,1) 59%,rgba(155,155,155,1) 93%,rgba(153,153,153,0.98) 95%,rgba(137,137,137,0.95) 97%,
+          rgba(114,114,114,0.95) 100%
+  );
+}
+
+.roomInterieurFloor {
+  position: absolute;
+  height: $heightFloor;
+  bottom: 0;
+  width: $screenWidth;
+  box-shadow:
+          inset 0 160px 10px -10px rgba(244, 244, 244, 0.1),
+          inset 0 140px 10px -10px rgba(32, 2, 3, 0.1),
+          inset 0 120px 10px -10px rgba(27, 27, 27, 0.1),
+          inset 0 100px 10px -10px rgba(27, 27, 27, 0.1),
+          inset 0 70px 10px -10px rgba(27, 27, 27, 0.1),
+          inset 0 60px 10px -10px rgba(27, 27, 27, 0.1),
+          inset 0 50px 10px -10px rgba(27, 27, 27, 0.1),
+          inset 0 40px 10px -10px rgba(27, 27, 27, 0.1),
+          inset 0 30px 10px -10px rgba(27, 27, 27, 0.1),
+          inset 0 20px 10px -10px rgba(27, 27, 27, 0.1);
+  background:
+          linear-gradient( 180deg,
+                  rgba(104, 86, 61, 1) 0%, rgba(127, 107, 79, 1) 2%, 
+                  rgba(141, 115, 84, 1) 2%, rgba(144, 117, 86, 1) 3%, 
+                  rgba(144, 121, 88, 1) 4%, rgba(145, 118, 88, 1) 9%, 
+                  rgba(151, 125, 94, 1) 11%, rgba(147, 121, 89, 1) 12%, 
+                  rgba(154, 128, 94, 1) 14%, rgba(151, 125, 92, 1) 17%, 
+                  rgba(162, 133, 103, 1) 22%, rgba(162, 134, 102, 1) 23%, 
+                  rgba(173, 142, 107, 1) 26%, rgba(169, 139, 105, 1) 28%, 
+                  rgba(175, 145, 111, 1) 30%, rgba(170, 140, 106, 1) 32%, 
+                  rgba(170, 140, 106, 1) 34%, rgba(180, 150, 116, 1) 35%, 
+                  rgba(178, 148, 114, 1) 36%, rgba(169, 139, 105, 1) 37%, 
+                  rgba(168, 138, 105, 1) 38%, rgba(175, 147, 112, 1) 43%, 
+                  rgba(170, 142, 107, 1) 45%, rgba(169, 141, 108, 1) 46%, 
+                  rgba(174, 147, 113, 1) 48%, rgba(174, 146, 113, 1) 49%, 
+                  rgba(179, 151, 115, 1) 51%, rgba(177, 149, 112, 1) 53%, 
+                  rgba(176, 148, 114, 1) 57%, rgba(182, 154, 119, 1) 58%, 
+                  rgba(183, 155, 119, 1) 60%, rgba(177, 149, 114, 1) 62%, 
+                  rgba(183, 155, 119, 1) 63%, rgba(190, 160, 124, 1) 65%, 
+                  rgba(181, 153, 119, 1) 66%, rgba(180, 153, 118, 1) 67%, 
+                  rgba(182, 155, 121, 1) 70%, rgba(178, 151, 117, 1) 72%, 
+                  rgba(184, 157, 123, 1) 74%, rgba(182, 156, 120, 1) 78%, 
+                  rgba(183, 156, 121, 1) 78%, rgba(191, 164, 128, 1) 79%, 
+                  rgba(196, 168, 133, 1) 80%, rgba(188, 161, 125, 1) 81%, 
+                  rgba(185, 159, 123, 1) 83%, rgba(186, 159, 123, 1) 85%, 
+                  rgba(194, 168, 132, 1) 87%, rgba(196, 170, 134, 1) 89%,
+                  rgba(185, 158, 122, 1) 91%, rgba(189, 162, 126, 1) 92%, 
+                  rgba(180, 155, 121, 1) 94%, rgba(185, 160, 126, 1) 97%, 
+                  rgba(185, 160, 125, 1) 99%, rgba(189, 163, 128, 1) 100%, 
+                  rgba(181, 162, 136, 1) 100%);
+}
+
+.roomTVStand {
+  position: absolute;
+  bottom: 90px;
+  left: 218px;
+  width: $tvStandWidth;
+  height: 188px;
+  $boxWidth: 308px;
+
+  .tvStandTopPlateTop {
+    position: absolute;
+    top: 2px;
+    left: 0;
+    width:$tvStandWidth;
+    height: 34px;
+    background: #afafaf; /* fallback */
+    background:
+            linear-gradient(155deg, transparent 16px, #afafaf 0) top left,
+            linear-gradient(203deg, transparent 16px, #afafaf 0) top right;
+    background-size: 50% 50%;
+    background-repeat: no-repeat;
   }
 
-  a {
-    font-size: 1.4rem;
+  .tvStandTopPlate {
+    position: absolute;
+    top:19px;
+    left:0;
+    background: linear-gradient( 21deg,
+            rgba(86,86,86,0.99) 0%,rgba(114,114,114,0.99) 2%,rgba(142,142,142,0.99) 4%,rgba(175,175,175,1) 8%,
+            rgb(172, 172, 172) 13%,rgba(181,181,181,1) 36%,rgba(193,193,193,1) 44%,rgba(153,153,153,1) 51%,
+            rgba(181,181,181,1) 59%,rgba(155,155,155,1) 93%,rgba(153,153,153,0.98) 95%,rgba(137,137,137,0.95) 97%,
+            rgba(114,114,114,0.95) 100%
+    );
+    height:11px;
+    width: $tvStandWidth;
+    border-top: 2px solid #b8bdbf;
+    border-bottom: 2px solid #696c6d;
+    box-shadow:
+            3px 1px 5px 1px rgba(9, 9, 5, 0.3);
+
   }
+  .tvStandBoxesLeft {
+    position: absolute;
+    top: 30px;
+    left: 0;
+    width: $boxWidth;
+    height: 128px;
+    .boxesLeftTop {
+      position: absolute;
+      top: 0;
+      width: $boxWidth;
+      height:67px;
+      background: linear-gradient(to bottom,
+                      rgba(181,189,200,1) 0%,
+                      rgba(130,140,149,1) 5%,
+                      rgba(44,45,40,1) 13%,
+                      rgba(41,45,40,1) 82%,
+                      rgba(40,52,59,1) 100%
+      );
+      box-shadow:
+              1px 1px 1px 1px rgba(9, 9, 5, 0.8),
+              inset 1px 3px 7px -1px rgba(193, 193, 193, 0.2),
+              inset 1px 3px 10px -1px rgba(208, 208, 208, 0.3);
+      border-bottom: 2px solid #141414;
+      ;
+      .boxesHandle {
+        position: absolute;
+        top: 50%;
+        left: 130px;
+        width: 20%;
+        height:5px;
+        background: linear-gradient(to right,
+                rgba(76,76,76,1) 0%, rgba(89,89,89,1) 12%,
+                rgb(224, 224, 224) 35%, rgb(168, 168, 168) 46%,
+                rgb(168, 168, 168) 50%, rgb(129, 129, 129) 51%,
+                rgb(87, 87, 87) 60%, rgb(64, 64, 64) 76%,
+                rgb(82, 82, 82) 91%, rgb(93, 93, 93) 100%);
+        border-radius: 3px;
+        border-top: #9b9b9b 2px solid;
+        border-bottom: #727272 2px solid;
+      }
+    }
+    .boxesLeftBottom {
+      position: absolute;
+      bottom: 0;
+      width: $boxWidth;
+      height:65px;
+      background: linear-gradient(to bottom,
+              rgba(181,189,200,1) 0%,
+              rgba(130,140,149,1) 2%,
+              rgba(44,45,40,1) 13%,
+              rgba(41,45,40,1) 82%,
+              rgba(40,52,59,1) 100%
+      );
+      box-shadow:
+              1px 1px 1px 1px rgba(9, 9, 5, 0.8),
+              inset 1px 3px 7px -1px rgba(193, 193, 193, 0.2),
+              inset 1px 3px 10px -1px rgba(208, 208, 208, 0.4);
+      .boxesHandle {
+        position: absolute;
+        top: 50%;
+        left: 130px;
+        width: 20%;
+        height:5px;
+        background: linear-gradient(to right,
+                rgba(76,76,76,1) 0%, rgba(89,89,89,1) 12%,
+                rgb(224, 224, 224) 35%, rgb(168, 168, 168) 46%,
+                rgb(168, 168, 168) 50%, rgb(129, 129, 129) 51%,
+                rgb(87, 87, 87) 60%, rgb(64, 64, 64) 76%,
+                rgb(82, 82, 82) 91%, rgb(93, 93, 93) 100%);
+        border-radius: 3px;
+        border-top: #9b9b9b 2px solid;
+        border-bottom: #727272 2px solid;
+      }
+    }
+  }
+  .tvStandBoxesMiddle {
+    position: absolute;
+    top: 30px;
+    left: $boxWidth;
+    width: 300px;
+    height:130px;
+    background-color: #4c4c4c;
+    box-shadow:
+            inset 17px 1px 3px 3px rgba(64, 64, 64, 0.8),
+            inset -27px 1px 3px 3px rgba(64, 64, 64, 0.8);
+    .boxMiddleInlayPlateTop {
+      margin-top: 48px;
+      margin-left: -6px;
+      height: 32px;
+      width:298px;
+      background: #ccc; /* fallback */
+      background:
+              linear-gradient(135deg, transparent 16px, rgba(230, 227, 227, 0.20) 0) top left,
+              linear-gradient(220deg, transparent 16px, rgba(204, 204, 204, 0.20) 0) top right;
+      background-size: 50% 50%;
+      background-repeat: no-repeat;
+    }
+    .boxMiddleInlayPlate {
+      position: absolute;
+      height: 8px;
+      width: 100%;
+      top: 62px;
+      left:0;
+      background: linear-gradient(to bottom,
+              rgba(181,189,200,0.5) 0%,
+              rgba(130,140,149,1) 36%,
+              rgba(40,52,59,1) 100%
+      );
+      box-shadow:
+              0 2px 12px -1px rgba(9, 9, 5, 0.8);
+    }
+    .boxMiddleBottomPlateTop {
+      margin-top: 34px;
+      margin-left: -6px;
+      height: 32px;
+      width:298px;
+      background: #ccc; /* fallback */
+      background:
+              linear-gradient(135deg, transparent 16px, rgb(99, 99, 99) 0) top left,
+              linear-gradient(220deg, transparent 16px, rgba(99, 99, 99, 1) 0) top right;
+      background-size: 50% 50%;
+      background-repeat: no-repeat;
+    }
+  }
+  .tvStandBoxesRight {
+    position: absolute;
+    top: 30px;
+    right: 0;
+    width: $boxWidth;
+    height: 128px;
+    box-shadow:
+            10px 1px 6px -6px rgba(9, 9, 5, 0.8);
+    .boxesRightTop {
+      position: absolute;
+      top: 0;
+      width: 100%;
+      height:67px;
+      background: linear-gradient(to bottom,
+                      rgba(181,189,200,1) 0%,
+                      rgba(130,140,149,1) 5%,
+                      rgba(44,45,40,1) 13%,
+                      rgba(41,45,40,1) 82%,
+                      rgba(40,52,59,1) 100%
+      );
+      box-shadow:
+              1px 1px 1px 1px rgba(9, 9, 5, 0.8),
+              inset 1px 3px 7px -1px rgba(193, 193, 193, 0.2),
+              inset 1px 3px 10px -1px rgba(208, 208, 208, 0.3);
+      border-bottom: 2px solid #141414;
+      ;
+      .boxesHandle {
+        position: absolute;
+        top: 50%;
+        left: 130px;
+        width: 20%;
+        height:5px;
+        background: linear-gradient(to right,
+                rgba(76,76,76,1) 0%, rgba(89,89,89,1) 12%,
+                rgb(224, 224, 224) 35%, rgb(168, 168, 168) 46%,
+                rgb(168, 168, 168) 50%, rgb(129, 129, 129) 51%,
+                rgb(87, 87, 87) 60%, rgb(64, 64, 64) 76%,
+                rgb(82, 82, 82) 91%, rgb(93, 93, 93) 100%);
+        border-radius: 3px;
+        border-top: #9b9b9b 2px solid;
+        border-bottom: #727272 2px solid;
+      }
+    }
+    .boxesRightBottom {
+      position: absolute;
+      bottom: 0;
+      width: $boxWidth;
+      height:65px;
+      background: linear-gradient(to bottom,
+              rgba(181,189,200,1) 0%,
+              rgba(130,140,149,1) 2%,
+              rgba(44,45,40,1) 13%,
+              rgba(41,45,40,1) 82%,
+              rgba(40,52,59,1) 100%
+      );
+      box-shadow:
+              1px 1px 1px 1px rgba(9, 9, 5, 0.8),
+              inset 1px 3px 7px -1px rgba(193, 193, 193, 0.2),
+              inset 1px 3px 10px -1px rgba(208, 208, 208, 0.4);
+      .boxesHandle {
+        position: absolute;
+        top: 50%;
+        left: 130px;
+        width: 20%;
+        height:5px;
+        background: linear-gradient(to right,
+                rgba(76,76,76,1) 0%, rgba(89,89,89,1) 12%,
+                rgb(224, 224, 224) 35%, rgb(168, 168, 168) 46%,
+                rgb(168, 168, 168) 50%, rgb(129, 129, 129) 51%,
+                rgb(87, 87, 87) 60%, rgb(64, 64, 64) 76%,
+                rgb(82, 82, 82) 91%, rgb(93, 93, 93) 100%);
+        border-radius: 3px;
+        border-top: #9b9b9b 2px solid;
+        border-bottom: #727272 2px solid;
+      }
+    }
+  }
+  .tvStandBottomPlate {
+    background: linear-gradient( to bottom,
+            rgba(86,86,86,0.99) 0%,rgba(114,114,114,0.99) 2%,rgba(142,142,142,0.99) 4%,rgba(175,175,175,1) 8%,
+            rgba(216,216,216,1) 13%,rgba(181,181,181,1) 36%,rgba(193,193,193,1) 44%,rgba(153,153,153,1) 51%,
+            rgba(181,181,181,1) 59%,rgba(155,155,155,1) 93%,rgba(153,153,153,0.98) 95%,rgba(137,137,137,0.95) 97%,
+            rgba(114,114,114,0.95) 100%
+    );
+    margin-top:18px;
+    height:11px;
+    position: absolute;
+    left: -3px;
+    bottom: 16px;
+    width: 912px;
+    border-right: 2px solid #9b9b9b;
+    box-shadow:
+            1px 7px 12px 3px rgba(9, 9, 5, 0.4),
+            inset 1px 1px 3px -1px rgba(193, 193, 193, 0.2),
+            inset 1px 1px 5px -1px rgba(208, 208, 208, 0.4);
+  }
+
+  .tvStandFoodLeft {
+    background: linear-gradient(90deg,
+            rgba(86,86,86,0.99) 0%,rgba(114,114,114,0.99) 2%,rgba(142,142,142,0.99) 4%, rgb(75, 75, 75) 8%,
+            rgb(135, 135, 135) 13%,rgba(181,181,181,1) 36%,rgba(193,193,193,1) 44%,rgba(153,153,153,1) 51%,
+            rgb(127, 127, 127) 59%, rgb(73, 73, 73) 93%,rgba(153,153,153,0.98) 95%,rgba(137,137,137,0.95) 97%,
+            rgba(114,114,114,0.95) 100%
+    );
+    width:30px;
+    height:7px;
+    position: absolute;
+    top:172px;
+    left:10px;
+    border-bottom: 2px solid #6c6c6c;
+    border-radius: 4px;
+    box-shadow:
+            1px 1px 1px 1px rgba(9, 9, 5, 0.3),
+            inset 1px 1px 3px -1px rgba(193, 193, 193, 0.2),
+            inset 1px 1px 5px -1px rgba(208, 208, 208, 0.4);
+  }
+
+  .tvStandFoodRight {
+    background: linear-gradient(90deg,
+            rgba(86,86,86,0.99) 0%,rgba(114,114,114,0.99) 2%,rgba(142,142,142,0.99) 4%, rgb(75, 75, 75) 8%,
+            rgb(135, 135, 135) 13%,rgba(181,181,181,1) 36%,rgba(193,193,193,1) 44%,rgba(153,153,153,1) 51%,
+            rgb(127, 127, 127) 59%, rgb(73, 73, 73) 93%,rgba(153,153,153,0.98) 95%,rgba(137,137,137,0.95) 97%,
+            rgba(114,114,114,0.95) 100%
+    );
+    width:30px;
+    height:7px;
+    position: absolute;
+    top:172px;
+    right:10px;
+    border-bottom: 2px solid #6c6c6c;
+    border-radius: 4px;
+    box-shadow:
+            1px 1px 1px 1px rgba(9, 9, 5, 0.3),
+            inset 1px 1px 3px -1px rgba(193, 193, 193, 0.2),
+            inset 1px 1px 5px -1px rgba(208, 208, 208, 0.4);
+  }
+}
+
+.roomTVStand::after {
+  content: "";
+  display:flex;
+  transform:rotateX(180deg);
+  background-image:
+          linear-gradient(180deg,rgba(255,255,255,0.0) 10%,rgba(255,255,255,0.5));
+  -webkit-background-clip: text;
+  color: transparent;
 }

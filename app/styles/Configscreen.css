@@ -1,0 +1,27 @@
+/* eslint-disable */
+body {
+  background: transparent;
+}
+
+#Simulatorscreen {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 0;
+  margin: 0;
+  text-align: center;
+}
+#Simulatorscreen .screentitle {
+  font-size: 5rem;
+}
+#Simulatorscreen a {
+  font-size: 1.4rem;
+}
+#Simulatorscreen .toolbar {
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+/*# sourceMappingURL=Configscreen.css.map */

@@ -73,9 +73,9 @@ All files in node_modules have their own licenses
     * [React-Photonkit](http://react-photonkit.github.io/) - [MIT](https://github.com/react-photonkit/react-photonkit/blob/master/license) 
     * ...
 
-Thaks to [electron-react-boilerplate](https://github.com/chentsulin/electron-react-boilerplate) for good inspirations
+Thanks to [electron-react-boilerplate](https://github.com/chentsulin/electron-react-boilerplate) for good inspirations
 
-#### All files in src/images/textures/
+#### All files in app/images/background/textures/
 - downloaded from [Subtle Patterns © Toptal Designers](https://toptal.com/designers/subtlepatterns]
 - Copyright [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)
 

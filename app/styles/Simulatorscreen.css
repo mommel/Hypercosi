@@ -1,14 +1,243 @@
+/* eslint-disable */
+body {
+  background: transparent;
+}
+
 .simulatorscreencontainer {
-  position: absolute;
-  top: 30%;
-  left: 10px;
-  text-align: center;
+  background-position-x: center;
+  background-position-y: top;
+  background: #aec1d0;
+  background: linear-gradient(70deg, #aec1d0 0%, #c1c7dd 26%, #d1d1e4 35%, #c1cddd 55%, #c9d6d0 69%, #cbd0d6 81%, #cde1e7 89%, #bec2cc 100%);
+  height: 1000px;
+  width: 100%;
 }
 .simulatorscreencontainer h2 {
-  font-size: 5rem;
+  color: #222;
 }
-.simulatorscreencontainer a {
-  font-size: 1.4rem;
+
+.roomInterieurBorder {
+  height: 20px;
+  width: 1584px;
+  position: absolute;
+  bottom: 145px;
+  left: 0;
+  box-shadow: -2px 6px 4px -2px rgba(9, 9, 5, 0.5);
+  background: linear-gradient(to bottom, rgba(86, 86, 86, 0.99) 0%, rgba(114, 114, 114, 0.99) 2%, rgba(142, 142, 142, 0.99) 4%, #afafaf 8%, #d8d8d8 13%, #b5b5b5 36%, #c1c1c1 44%, #999999 51%, #b5b5b5 59%, #9b9b9b 93%, rgba(153, 153, 153, 0.98) 95%, rgba(137, 137, 137, 0.95) 97%, rgba(114, 114, 114, 0.95) 100%);
+}
+
+.roomInterieurFloor {
+  position: absolute;
+  height: 145px;
+  bottom: 0;
+  width: 1584px;
+  box-shadow: inset 0 160px 10px -10px rgba(244, 244, 244, 0.1), inset 0 140px 10px -10px rgba(32, 2, 3, 0.1), inset 0 120px 10px -10px rgba(27, 27, 27, 0.1), inset 0 100px 10px -10px rgba(27, 27, 27, 0.1), inset 0 70px 10px -10px rgba(27, 27, 27, 0.1), inset 0 60px 10px -10px rgba(27, 27, 27, 0.1), inset 0 50px 10px -10px rgba(27, 27, 27, 0.1), inset 0 40px 10px -10px rgba(27, 27, 27, 0.1), inset 0 30px 10px -10px rgba(27, 27, 27, 0.1), inset 0 20px 10px -10px rgba(27, 27, 27, 0.1);
+  background: linear-gradient(180deg, #68563d 0%, #7f6b4f 2%, #8d7354 2%, #907556 3%, #907958 4%, #917658 9%, #977d5e 11%, #937959 12%, #9a805e 14%, #977d5c 17%, #a28567 22%, #a28666 23%, #ad8e6b 26%, #a98b69 28%, #af916f 30%, #aa8c6a 32%, #aa8c6a 34%, #b49674 35%, #b29472 36%, #a98b69 37%, #a88a69 38%, #af9370 43%, #aa8e6b 45%, #a98d6c 46%, #ae9371 48%, #ae9271 49%, #b39773 51%, #b19570 53%, #b09472 57%, #b69a77 58%, #b79b77 60%, #b19572 62%, #b79b77 63%, #bea07c 65%, #b59977 66%, #b49976 67%, #b69b79 70%, #b29775 72%, #b89d7b 74%, #b69c78 78%, #b79c79 78%, #bfa480 79%, #c4a885 80%, #bca17d 81%, #b99f7b 83%, #ba9f7b 85%, #c2a884 87%, #c4aa86 89%, #b99e7a 91%, #bda27e 92%, #b49b79 94%, #b9a07e 97%, #b9a07d 99%, #bda380 100%, #b5a288 100%);
+}
+
+.roomTVStand {
+  position: absolute;
+  bottom: 90px;
+  left: 218px;
+  width: 904px;
+  height: 188px;
+}
+.roomTVStand .tvStandTopPlateTop {
+  position: absolute;
+  top: 2px;
+  left: 0;
+  width: 904px;
+  height: 34px;
+  background: #afafaf;
+  /* fallback */
+  background: linear-gradient(155deg, transparent 16px, #afafaf 0) top left, linear-gradient(203deg, transparent 16px, #afafaf 0) top right;
+  background-size: 50% 50%;
+  background-repeat: no-repeat;
+}
+.roomTVStand .tvStandTopPlate {
+  position: absolute;
+  top: 19px;
+  left: 0;
+  background: linear-gradient(21deg, rgba(86, 86, 86, 0.99) 0%, rgba(114, 114, 114, 0.99) 2%, rgba(142, 142, 142, 0.99) 4%, #afafaf 8%, #acacac 13%, #b5b5b5 36%, #c1c1c1 44%, #999999 51%, #b5b5b5 59%, #9b9b9b 93%, rgba(153, 153, 153, 0.98) 95%, rgba(137, 137, 137, 0.95) 97%, rgba(114, 114, 114, 0.95) 100%);
+  height: 11px;
+  width: 904px;
+  border-top: 2px solid #b8bdbf;
+  border-bottom: 2px solid #696c6d;
+  box-shadow: 3px 1px 5px 1px rgba(9, 9, 5, 0.3);
+}
+.roomTVStand .tvStandBoxesLeft {
+  position: absolute;
+  top: 30px;
+  left: 0;
+  width: 308px;
+  height: 128px;
+}
+.roomTVStand .tvStandBoxesLeft .boxesLeftTop {
+  position: absolute;
+  top: 0;
+  width: 308px;
+  height: 67px;
+  background: linear-gradient(to bottom, #b5bdc8 0%, #828c95 5%, #2c2d28 13%, #292d28 82%, #28343b 100%);
+  box-shadow: 1px 1px 1px 1px rgba(9, 9, 5, 0.8), inset 1px 3px 7px -1px rgba(193, 193, 193, 0.2), inset 1px 3px 10px -1px rgba(208, 208, 208, 0.3);
+  border-bottom: 2px solid #141414;
+}
+.roomTVStand .tvStandBoxesLeft .boxesLeftTop .boxesHandle {
+  position: absolute;
+  top: 50%;
+  left: 130px;
+  width: 20%;
+  height: 5px;
+  background: linear-gradient(to right, #4c4c4c 0%, #595959 12%, #e0e0e0 35%, #a8a8a8 46%, #a8a8a8 50%, #818181 51%, #575757 60%, #404040 76%, #525252 91%, #5d5d5d 100%);
+  border-radius: 3px;
+  border-top: #9b9b9b 2px solid;
+  border-bottom: #727272 2px solid;
+}
+.roomTVStand .tvStandBoxesLeft .boxesLeftBottom {
+  position: absolute;
+  bottom: 0;
+  width: 308px;
+  height: 65px;
+  background: linear-gradient(to bottom, #b5bdc8 0%, #828c95 2%, #2c2d28 13%, #292d28 82%, #28343b 100%);
+  box-shadow: 1px 1px 1px 1px rgba(9, 9, 5, 0.8), inset 1px 3px 7px -1px rgba(193, 193, 193, 0.2), inset 1px 3px 10px -1px rgba(208, 208, 208, 0.4);
+}
+.roomTVStand .tvStandBoxesLeft .boxesLeftBottom .boxesHandle {
+  position: absolute;
+  top: 50%;
+  left: 130px;
+  width: 20%;
+  height: 5px;
+  background: linear-gradient(to right, #4c4c4c 0%, #595959 12%, #e0e0e0 35%, #a8a8a8 46%, #a8a8a8 50%, #818181 51%, #575757 60%, #404040 76%, #525252 91%, #5d5d5d 100%);
+  border-radius: 3px;
+  border-top: #9b9b9b 2px solid;
+  border-bottom: #727272 2px solid;
+}
+.roomTVStand .tvStandBoxesMiddle {
+  position: absolute;
+  top: 30px;
+  left: 308px;
+  width: 300px;
+  height: 130px;
+  background-color: #4c4c4c;
+  box-shadow: inset 17px 1px 3px 3px rgba(64, 64, 64, 0.8), inset -27px 1px 3px 3px rgba(64, 64, 64, 0.8);
+}
+.roomTVStand .tvStandBoxesMiddle .boxMiddleInlayPlateTop {
+  margin-top: 48px;
+  margin-left: -6px;
+  height: 32px;
+  width: 298px;
+  background: #ccc;
+  /* fallback */
+  background: linear-gradient(135deg, transparent 16px, rgba(230, 227, 227, 0.2) 0) top left, linear-gradient(220deg, transparent 16px, rgba(204, 204, 204, 0.2) 0) top right;
+  background-size: 50% 50%;
+  background-repeat: no-repeat;
+}
+.roomTVStand .tvStandBoxesMiddle .boxMiddleInlayPlate {
+  position: absolute;
+  height: 8px;
+  width: 100%;
+  top: 62px;
+  left: 0;
+  background: linear-gradient(to bottom, rgba(181, 189, 200, 0.5) 0%, #828c95 36%, #28343b 100%);
+  box-shadow: 0 2px 12px -1px rgba(9, 9, 5, 0.8);
+}
+.roomTVStand .tvStandBoxesMiddle .boxMiddleBottomPlateTop {
+  margin-top: 34px;
+  margin-left: -6px;
+  height: 32px;
+  width: 298px;
+  background: #ccc;
+  /* fallback */
+  background: linear-gradient(135deg, transparent 16px, #636363 0) top left, linear-gradient(220deg, transparent 16px, #636363 0) top right;
+  background-size: 50% 50%;
+  background-repeat: no-repeat;
+}
+.roomTVStand .tvStandBoxesRight {
+  position: absolute;
+  top: 30px;
+  right: 0;
+  width: 308px;
+  height: 128px;
+  box-shadow: 10px 1px 6px -6px rgba(9, 9, 5, 0.8);
+}
+.roomTVStand .tvStandBoxesRight .boxesRightTop {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 67px;
+  background: linear-gradient(to bottom, #b5bdc8 0%, #828c95 5%, #2c2d28 13%, #292d28 82%, #28343b 100%);
+  box-shadow: 1px 1px 1px 1px rgba(9, 9, 5, 0.8), inset 1px 3px 7px -1px rgba(193, 193, 193, 0.2), inset 1px 3px 10px -1px rgba(208, 208, 208, 0.3);
+  border-bottom: 2px solid #141414;
+}
+.roomTVStand .tvStandBoxesRight .boxesRightTop .boxesHandle {
+  position: absolute;
+  top: 50%;
+  left: 130px;
+  width: 20%;
+  height: 5px;
+  background: linear-gradient(to right, #4c4c4c 0%, #595959 12%, #e0e0e0 35%, #a8a8a8 46%, #a8a8a8 50%, #818181 51%, #575757 60%, #404040 76%, #525252 91%, #5d5d5d 100%);
+  border-radius: 3px;
+  border-top: #9b9b9b 2px solid;
+  border-bottom: #727272 2px solid;
+}
+.roomTVStand .tvStandBoxesRight .boxesRightBottom {
+  position: absolute;
+  bottom: 0;
+  width: 308px;
+  height: 65px;
+  background: linear-gradient(to bottom, #b5bdc8 0%, #828c95 2%, #2c2d28 13%, #292d28 82%, #28343b 100%);
+  box-shadow: 1px 1px 1px 1px rgba(9, 9, 5, 0.8), inset 1px 3px 7px -1px rgba(193, 193, 193, 0.2), inset 1px 3px 10px -1px rgba(208, 208, 208, 0.4);
+}
+.roomTVStand .tvStandBoxesRight .boxesRightBottom .boxesHandle {
+  position: absolute;
+  top: 50%;
+  left: 130px;
+  width: 20%;
+  height: 5px;
+  background: linear-gradient(to right, #4c4c4c 0%, #595959 12%, #e0e0e0 35%, #a8a8a8 46%, #a8a8a8 50%, #818181 51%, #575757 60%, #404040 76%, #525252 91%, #5d5d5d 100%);
+  border-radius: 3px;
+  border-top: #9b9b9b 2px solid;
+  border-bottom: #727272 2px solid;
+}
+.roomTVStand .tvStandBottomPlate {
+  background: linear-gradient(to bottom, rgba(86, 86, 86, 0.99) 0%, rgba(114, 114, 114, 0.99) 2%, rgba(142, 142, 142, 0.99) 4%, #afafaf 8%, #d8d8d8 13%, #b5b5b5 36%, #c1c1c1 44%, #999999 51%, #b5b5b5 59%, #9b9b9b 93%, rgba(153, 153, 153, 0.98) 95%, rgba(137, 137, 137, 0.95) 97%, rgba(114, 114, 114, 0.95) 100%);
+  margin-top: 18px;
+  height: 11px;
+  position: absolute;
+  left: -3px;
+  bottom: 16px;
+  width: 912px;
+  border-right: 2px solid #9b9b9b;
+  box-shadow: 1px 7px 12px 3px rgba(9, 9, 5, 0.4), inset 1px 1px 3px -1px rgba(193, 193, 193, 0.2), inset 1px 1px 5px -1px rgba(208, 208, 208, 0.4);
+}
+.roomTVStand .tvStandFoodLeft {
+  background: linear-gradient(90deg, rgba(86, 86, 86, 0.99) 0%, rgba(114, 114, 114, 0.99) 2%, rgba(142, 142, 142, 0.99) 4%, #4b4b4b 8%, #878787 13%, #b5b5b5 36%, #c1c1c1 44%, #999999 51%, #7f7f7f 59%, #494949 93%, rgba(153, 153, 153, 0.98) 95%, rgba(137, 137, 137, 0.95) 97%, rgba(114, 114, 114, 0.95) 100%);
+  width: 30px;
+  height: 7px;
+  position: absolute;
+  top: 172px;
+  left: 10px;
+  border-bottom: 2px solid #6c6c6c;
+  border-radius: 4px;
+  box-shadow: 1px 1px 1px 1px rgba(9, 9, 5, 0.3), inset 1px 1px 3px -1px rgba(193, 193, 193, 0.2), inset 1px 1px 5px -1px rgba(208, 208, 208, 0.4);
+}
+.roomTVStand .tvStandFoodRight {
+  background: linear-gradient(90deg, rgba(86, 86, 86, 0.99) 0%, rgba(114, 114, 114, 0.99) 2%, rgba(142, 142, 142, 0.99) 4%, #4b4b4b 8%, #878787 13%, #b5b5b5 36%, #c1c1c1 44%, #999999 51%, #7f7f7f 59%, #494949 93%, rgba(153, 153, 153, 0.98) 95%, rgba(137, 137, 137, 0.95) 97%, rgba(114, 114, 114, 0.95) 100%);
+  width: 30px;
+  height: 7px;
+  position: absolute;
+  top: 172px;
+  right: 10px;
+  border-bottom: 2px solid #6c6c6c;
+  border-radius: 4px;
+  box-shadow: 1px 1px 1px 1px rgba(9, 9, 5, 0.3), inset 1px 1px 3px -1px rgba(193, 193, 193, 0.2), inset 1px 1px 5px -1px rgba(208, 208, 208, 0.4);
+}
+
+.roomTVStand::after {
+  content: "";
+  display: flex;
+  transform: rotateX(180deg);
+  background-image: linear-gradient(180deg, rgba(255, 255, 255, 0) 10%, rgba(255, 255, 255, 0.5));
+  -webkit-background-clip: text;
+  color: transparent;
 }
 
 /*# sourceMappingURL=Simulatorscreen.css.map */
