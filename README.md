@@ -46,13 +46,35 @@ $ yarn package
 ## Screens
 
 ### Home
+- Infos
 
 ### Plan
+- the setup part of Simulate will move here
 
 ### Simulate
-<img src="resources/screens/simulatorScreen.png" width="300px" /> 
+<img src="resources/screens/simulatorScreen.png" width="600px" />
+
+#### Select
+- your TV size
+- your preferred LED per meter amount
+- if your tv is wall-mounted or on a stand
+- if your want to leave out the bottom led stripe
+- change the living room wall with other textues
+
+#### Get Infos about
+- amount of leds in hole
+- amount of leds on each edge
+- an example of a useable power supplies
+
+#### Simulate
+- run a video in the simulator and simulate the planed setup
+
+#### Tweak
+- Tweak the result by modifing the capture frames
 
 ### Config
+- Export the simulated setup as hyperion or enigmalight config
+
 
 ## Maintainers
 
@@ -78,12 +100,12 @@ is Copyright by Mommel and licensed below
 #### Dependencies
 All files in node_modules have their own licenses
 
-    * [Electron](https://electronjs.org/) - [MIT](https://github.com/electron/electron/blob/master/LICENSE)
-    * React
-    * Redux
-    * [Webpack](https://webpack.js.org) - [MIT](https://webpack.js.org/license/)
-    * [React-Photonkit](http://react-photonkit.github.io/) - [MIT](https://github.com/react-photonkit/react-photonkit/blob/master/license) 
-    * ...
+- [Electron](https://electronjs.org/) - [MIT](https://github.com/electron/electron/blob/master/LICENSE)
+- React
+- Redux
+- [Webpack](https://webpack.js.org) - [MIT](https://webpack.js.org/license/)
+- [React-Photonkit](http://react-photonkit.github.io/) - [MIT](https://github.com/react-photonkit/react-photonkit/blob/master/license) 
+- ...
 
 Thanks to [electron-react-boilerplate](https://github.com/chentsulin/electron-react-boilerplate) for good inspirations
 
