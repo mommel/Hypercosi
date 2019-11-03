@@ -1,14 +1,14 @@
 import * as React from "react";
 import { Button, Label, MenuItem } from "@blueprintjs/core";
 import { Select } from "@blueprintjs/select";
-import * as TVSizes from "../../utils/definitions/general-tv-sizes";
+import * as LEDTypes from "../../utils/definitions/led-types";
 
 type Props = {};
 
-export default class SelectTVSize extends Select {
+export default class SelectLedStripe extends Select {
   constructor(props) {
     super(props);
-    this.state = { TVSizes: TVSizes.tvSizes };
+    this.state = { LEDTypes: LEDTypes.options };
   }
   
   props: Props;
@@ -16,9 +16,9 @@ export default class SelectTVSize extends Select {
   itemRenderer(item, {handleClick}) {
     return (
       <MenuItem
-        key={item.id}
+        key={item.lpm}
         // label={item.diagonal.imperial}
-        text={item.diagonal.imperial}
+        text={item.lpm}
         onClick={handleClick}
         shouldDismissPopover={true}
         disabled={false}
@@ -34,18 +34,19 @@ export default class SelectTVSize extends Select {
   
   
   render () {
-    console.log('tvsize', this.state.tvSizes)
+    console.log('ledtypes', this.state.LEDTypes)
     return (
       <div>
-        <Label>Your TV Size
+        <Label>Leds / m
           <Select
-            items={this.state.TVSizes}
+            disabled={false}
+            items={this.state.LEDTypes}
             filterable={false}
             itemRenderer={this.itemRenderer}
-            noResults={<MenuItem disabled={true} text="No results."/>}
+            // noResults={<MenuItem disabled={true} text="No results."/>}
             onItemSelect={this.handleclick}
           >
-            <Button text={'Your TV Sizes'} rightIcon="caret-down" />
+            <Button text={'Select a LED Type'} rightIcon="caret-down" />
           </Select>
         </Label>
       </div>

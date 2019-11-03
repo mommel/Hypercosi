@@ -43,6 +43,17 @@ To package apps for the local platform:
 $ yarn package
 ```
 
+## Screens
+
+### Home
+
+### Plan
+
+### Simulate
+<img src="resources/screens/simulatorScreen.png" width="300px" /> 
+
+### Config
+
 ## Maintainers
 
 - [Mommel](https://github.com/mommel)
@@ -66,6 +77,7 @@ is Copyright by Mommel and licensed below
 
 #### Dependencies
 All files in node_modules have their own licenses
+
     * [Electron](https://electronjs.org/) - [MIT](https://github.com/electron/electron/blob/master/LICENSE)
     * React
     * Redux
