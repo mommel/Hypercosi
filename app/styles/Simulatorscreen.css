@@ -17,7 +17,7 @@ body {
 
 .roomInterieurBorder {
   height: 20px;
-  width: 1584px;
+  width: 100%;
   position: absolute;
   bottom: 145px;
   left: 0;
@@ -29,7 +29,7 @@ body {
   position: absolute;
   height: 145px;
   bottom: 0;
-  width: 1584px;
+  width: 100%;
   box-shadow: inset 0 160px 10px -10px rgba(244, 244, 244, 0.1), inset 0 140px 10px -10px rgba(32, 2, 3, 0.1), inset 0 120px 10px -10px rgba(27, 27, 27, 0.1), inset 0 100px 10px -10px rgba(27, 27, 27, 0.1), inset 0 70px 10px -10px rgba(27, 27, 27, 0.1), inset 0 60px 10px -10px rgba(27, 27, 27, 0.1), inset 0 50px 10px -10px rgba(27, 27, 27, 0.1), inset 0 40px 10px -10px rgba(27, 27, 27, 0.1), inset 0 30px 10px -10px rgba(27, 27, 27, 0.1), inset 0 20px 10px -10px rgba(27, 27, 27, 0.1);
   background: linear-gradient(180deg, #68563d 0%, #7f6b4f 2%, #8d7354 2%, #907556 3%, #907958 4%, #917658 9%, #977d5e 11%, #937959 12%, #9a805e 14%, #977d5c 17%, #a28567 22%, #a28666 23%, #ad8e6b 26%, #a98b69 28%, #af916f 30%, #aa8c6a 32%, #aa8c6a 34%, #b49674 35%, #b29472 36%, #a98b69 37%, #a88a69 38%, #af9370 43%, #aa8e6b 45%, #a98d6c 46%, #ae9371 48%, #ae9271 49%, #b39773 51%, #b19570 53%, #b09472 57%, #b69a77 58%, #b79b77 60%, #b19572 62%, #b79b77 63%, #bea07c 65%, #b59977 66%, #b49976 67%, #b69b79 70%, #b29775 72%, #b89d7b 74%, #b69c78 78%, #b79c79 78%, #bfa480 79%, #c4a885 80%, #bca17d 81%, #b99f7b 83%, #ba9f7b 85%, #c2a884 87%, #c4aa86 89%, #b99e7a 91%, #bda27e 92%, #b49b79 94%, #b9a07e 97%, #b9a07d 99%, #bda380 100%, #b5a288 100%);
 }
