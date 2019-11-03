@@ -11,20 +11,11 @@ body {
   margin: 0;
   text-align: center;
 }
-#Homescreen .screentitle {
+#Homescreen h2 {
   font-size: 5rem;
 }
 #Homescreen a {
   font-size: 1.4rem;
-}
-#Homescreen .applogo img {
-  width: 200px;
-}
-#Homescreen .toolbar {
-  width: 100%;
-  position: absolute;
-  top: 0;
-  left: 0;
 }
 
 /*# sourceMappingURL=Homescreen.css.map */

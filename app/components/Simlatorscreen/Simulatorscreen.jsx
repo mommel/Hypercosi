@@ -1,34 +1,56 @@
 // @flow
-import { Component } from 'react'
-// import Toolbar from "../Toolbar/Toolbar";
-// import styles from '../../styles/Simulatorscreen.css'
-// import banner from '../../images/banner.png'
-import { FormGroup, InputGroup } from '@blueprintjs/core';
+import React, {Component } from 'react'
+import styles from '../../styles/Simulatorscreen.css'
+import SettingsModal from "./SettingsModal";
+import SimulatorTv from "./SimulatorTv";
 
 type Props = {};
 
 export default class Simulatorscreen extends Component<Props> {
+  constructor(props){
+    super(props)
+    this.props = props
+  }
+  
   props: Props;
   
   render () {
     return (
-      <div >
-        <h2>Simulator</h2>
-        <FormGroup
-          helperText="Helper text with details..."
-          label="Label A"
-          labelFor="text-input"
-          labelInfo="(required)"
-        >
-          <InputGroup id="text-input" placeholder="Placeholder text" />
-        </FormGroup>
+      <div id="Simulatorscreen" className={styles.simulatorscreencontainer} data-tid="simulatorscreencontainer">
+        <h2 style={{textAlign: 'left'}} className={styles.screentitle}>Simulator</h2>
+        <SimulatorTv />
+        <SettingsModal />
+        <div className={styles.roomInterieurBorder} />
+        <div className={styles.roomInterieurFloor} />
+        <div className={styles.roomTVStand}>
+          <div className={styles.tvStandTopPlateTop} />
+          <div className={styles.tvStandTopPlate} />
+          <div className={styles.tvStandBoxesLeft} >
+            <div className={styles.boxesLeftTop}>
+              <div className={styles.boxesHandle} />
+            </div>
+            <div className={styles.boxesLeftBottom}>
+              <div className={styles.boxesHandle} />
+            </div>
+          </div>
+          <div className={styles.tvStandBoxesMiddle} >
+            <div className={styles.boxMiddleInlayPlateTop} />
+            <div className={styles.boxMiddleInlayPlate} />
+            <div className={styles.boxMiddleBottomPlateTop} />
+          </div>
+          <div className={styles.tvStandBoxesRight} >
+            <div className={styles.boxesRightTop}>
+              <div className={styles.boxesHandle} />
+            </div>
+            <div className={styles.boxesRightBottom}>
+              <div className={styles.boxesHandle} />
+            </div>
+          </div>
+          <div className={styles.tvStandBottomPlate} />
+          <div className={styles.tvStandFoodLeft} />
+          <div className={styles.tvStandFoodRight} />
+        </div>
       </div>
     )
   }
 }
-
-/*
-className={styles.container} data-tid="container"
-<Toolbar/>
-    <img alt="logo" src={banner} />
- */

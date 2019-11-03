@@ -1,4 +1,6 @@
 {
   "HOME": "/",
-  "SIMULATOR": "/simulatorscreen"
+  "PLAN": "/Planscreen",
+  "SIMULATE": "/Simulatorscreen",
+  "CONFIG": "/CONFIGscreen"
 }

@@ -1,0 +1,46 @@
+{
+	"inch32": {
+		"width": 708,
+		"height": 398
+	},
+	"inch40": {
+		"width": 886,
+		"height": 498
+	},
+	"inch42": {
+		"width": 930,
+		"height": 523
+	},
+	"inch46": {
+		"width": 952,
+		"height": 535
+	},
+	"inch49": {
+		"width": 1018,
+		"height": 573
+	},
+	"inch55": {
+		"width": 1218,
+		"height": 685
+	},
+	"inch60": {
+		"width": 1380,
+		"height": 798
+	},
+	"inch65": {
+		"width": 1450,
+		"height": 800
+	},
+	"inch70": {
+		"width": 1550,
+		"height": 872
+	},
+	"inch75": {
+		"width": 1465,
+		"height": 845
+	},
+	"inch86": {
+		"width": 1904,
+		"height": 1071
+	}
+}

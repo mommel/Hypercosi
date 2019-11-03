@@ -1,0 +1,250 @@
+{
+  "tvSizes": [
+    {
+      "id":"1632",
+      "name": "32\"",
+      "diagonal": {
+        "metric": 813,
+        "imperial": 32
+      },
+      "ratio": 169,
+      "width": {
+        "metric": 709,
+        "imperial": 27.9
+      },
+      "height": {
+        "metric": 399,
+        "imperial": 15.7
+      },
+      "renderSize": {
+        "height": 210,
+        "width": 120
+      }
+    },
+    {
+      "id":"1640",
+      "name": "40\"",
+      "diagonal": {
+        "metric": 1016,
+        "imperial": 40
+      },
+      "ratio": 169,
+      "width": {
+        "metric": 886,
+        "imperial": 34.9
+      },
+      "height": {
+        "metric": 498,
+        "imperial": 19.6
+      },
+      "renderSize": {
+        "height": 305,
+        "width": 170
+      }
+    },
+    {
+      "id":"1642",
+      "name": "42\"",
+      "diagonal": {
+        "metric": 1067,
+        "imperial": 42
+      },
+      "ratio": 169,
+      "width": {
+        "metric": 930,
+        "imperial": 36.6
+      },
+      "height": {
+        "metric": 523,
+        "imperial": 20.6
+      }
+    },
+    {
+      "id":"1643",
+      "name": "43\"",
+      "diagonal": {
+        "metric": 1092,
+        "imperial": 43
+      },
+      "ratio": 169,
+      "width": {
+        "metric": 953,
+        "imperial": 37.5
+      },
+      "height": {
+        "metric": 536,
+        "imperial": 21.1
+      }
+    },
+    {
+      "id":"1646",
+      "name": "46\"",
+      "diagonal": {
+        "metric": 1168,
+        "imperial": 46
+      },
+      "ratio": 169,
+      "width": {
+        "metric": 1020,
+        "imperial": 40.2
+      },
+      "height": {
+        "metric": 574,
+        "imperial": 22.6
+      }
+    },
+    {
+      "id":"1649",
+      "name": "49\"",
+      "diagonal": {
+        "metric": 1245,
+        "imperial": 49
+      },
+      "ratio": 169,
+      "width": {
+        "metric": 1081,
+        "imperial": 42.6
+      },
+      "height": {
+        "metric": 608,
+        "imperial": 23.9
+      }
+    },
+    {
+      "id":"1650",
+      "name": "50\"",
+      "diagonal": {
+        "metric": 1270,
+        "imperial": 50
+      },
+      "ratio": 169,
+      "width": {
+        "metric": 1107,
+        "imperial": 43.6
+      },
+      "height": {
+        "metric": 623,
+        "imperial": 24.5
+      }
+    },
+    {
+      "id":"1655",
+      "name": "55\"",
+      "diagonal": {
+        "metric": 1397,
+        "imperial": 55
+      },
+      "ratio": 169,
+      "width": {
+        "metric": 1217,
+        "imperial": 47.9
+      },
+      "height": {
+        "metric": 686,
+        "imperial": 27.0
+      }
+    },
+    {
+      "id":"1660",
+      "name": "60\"",
+      "diagonal": {
+        "metric": 1524,
+        "imperial": 60
+      },
+      "ratio": 169,
+      "width": {
+        "metric": 1328,
+        "imperial": 52.3
+      },
+      "height": {
+        "metric": 747,
+        "imperial": 29.4
+      }
+    },
+    {
+      "id":"1665",
+      "name": "65\"",
+      "diagonal": {
+        "metric": 1651,
+        "imperial": 65
+      },
+      "ratio": 169,
+      "width": {
+        "metric": 1440,
+        "imperial": 56.7
+      },
+      "height": {
+        "metric": 810,
+        "imperial": 31.9
+      }
+    },
+    {
+      "id":"1670",
+      "name": "70\"",
+      "diagonal": {
+        "metric": 1778,
+        "imperial": 70
+      },
+      "ratio": 169,
+      "width": {
+        "metric": 1549,
+        "imperial": 61.0
+      },
+      "height": {
+        "metric": 871,
+        "imperial": 34.3
+      }
+    },
+    {
+      "id":"1675",
+      "name": "75\"",
+      "diagonal": {
+        "metric": 1905,
+        "imperial": 75
+      },
+      "ratio": 169,
+      "width": {
+        "metric": 1661,
+        "imperial": 65.4
+      },
+      "height": {
+        "metric": 935,
+        "imperial": 36.8
+      }
+    },
+    {
+      "id":"1680",
+      "name": "80\"",
+      "diagonal": {
+        "metric": 2032,
+        "imperial": 80
+      },
+      "ratio": 169,
+      "width": {
+        "metric": 1770,
+        "imperial": 69.7
+      },
+      "height": {
+        "metric": 996,
+        "imperial": 39.2
+      }
+    },
+    {
+      "id":"1685",
+      "name": "85\"",
+      "diagonal": {
+        "metric": 2159,
+        "imperial": 85
+      },
+      "ratio": 169,
+      "width": {
+        "metric": 1882,
+        "imperial": 74.1
+      },
+      "height": {
+        "metric": 1059,
+        "imperial": 41.7
+      }
+    }
+  ]
+}

@@ -107,10 +107,10 @@ const createMainWindow = starthot =>  {
   
   const opts = {
     show: false,
-    Width: 1600,
-    Height: 800,
-    minWidth: 1200,
-    minHeight: 600,
+    width:1600,
+    height:1000,
+    minWidth: 1350,
+    minHeight: 930,
     center: true,
     kiosk: false,
     title: config.APP_NAME,

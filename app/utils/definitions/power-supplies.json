@@ -1,0 +1,104 @@
+{
+  "options":[
+    {
+      "watt": 15,
+      "ampere": 3
+    },
+    {
+      "watt": 25,
+      "ampere": 5
+    },
+    {
+      "watt": 35,
+      "ampere": 7
+    },
+    {
+      "watt": 50,
+      "ampere": 10
+    },
+    {
+      "watt": 60,
+      "ampere": 12
+    },
+    {
+      "watt": 70,
+      "ampere": 14
+    },
+    {
+      "watt": 75,
+      "ampere": 15
+    },
+    {
+      "watt": 80,
+      "ampere": 16.5
+    },
+    {
+      "watt": 85,
+      "ampere": 17
+    },
+    {
+      "watt": 90,
+      "ampere": 18
+    },
+    {
+      "watt": 90,
+      "ampere": 18
+    },
+    {
+      "watt": 100,
+      "ampere": 20
+    },
+    {
+      "watt": 110,
+      "ampere": 22
+    },
+    {
+      "watt": 130,
+      "ampere": 26
+    },
+    {
+      "watt": 150,
+      "ampere": 30
+    },
+    {
+      "watt": 175,
+      "ampere": 35
+    },
+    {
+      "watt": 200,
+      "ampere": 40
+    },
+    {
+      "watt": 225,
+      "ampere": 45
+    },
+    {
+      "watt": 275,
+      "ampere": 55
+    },
+    {
+      "watt": 300,
+      "ampere": 60
+    },
+    {
+      "watt": 400,
+      "ampere": 80
+    },
+    {
+      "watt": 450,
+      "ampere": 90
+    },
+    {
+      "watt": 500,
+      "ampere": 100
+    },
+    {
+      "watt": 600,
+      "ampere": 120
+    },
+    {
+      "watt": 1200,
+      "ampere": 240
+    }
+  ],
+}
