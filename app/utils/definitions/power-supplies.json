@@ -1,5 +1,5 @@
 {
-  "options":[
+  "options": [
     {
       "watt": 15,
       "ampere": 3
@@ -100,5 +100,5 @@
       "watt": 1200,
       "ampere": 240
     }
-  ],
+  ]
 }

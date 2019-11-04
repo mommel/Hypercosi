@@ -2,6 +2,7 @@
 import React, {Component} from 'react';
 const { nativeTheme, remote } = require('electron')
 
+import styles from '../../styles/Navbar.mac.css'
 import routes from '../../constants/routes';
 import {
   Button,
@@ -41,7 +42,7 @@ export default class Navigation extends Component<Props> {
             <NavbarDivider />
             <NavigationButton history={this.props.history} icon="presentation" text="Simulate" link={routes.SIMULATE} />
             <NavbarDivider />
-            <NavigationButton history={this.props.history} icon="full-stacked-chart" text="Config" link={routes.CONFIG} />
+            <NavigationButton history={this.props.history} icon="full-stacked-chart" text="Config" link={routes.EXPORTCONFIG} />
             <NavbarDivider />
           </NavbarGroup>
           <NavbarGroup align={Alignment.RIGHT}>

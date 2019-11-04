@@ -1,11 +1,7 @@
 <img src="internals/img/banner.png" width="100%" />
-
 <br>
 
-# Hypercosi
-
 _Hyperion Configuration Tool and Simulator_
-
 
 <br>
 
@@ -17,25 +13,26 @@ _Hyperion Configuration Tool and Simulator_
 [![David Dev Tag][david-dev-image]][david-dev-url]  
 [![Good First Issue Tag][good-first-issue-image]][good-first-issue-url]  
 
-## Install
+# Installation
 
+## Get the code
 Clone the repo and install the dependencies:
-
 ```bash
 git clone https://github.com/mommel/Hypercosi.git && \
 cd Hypercosi && \
 yarn
 ```
 
-## Starting Development
+## Development
 
+### Start
 Start the app in the `dev` environment. This starts the renderer process in [**hot-module-replacement**](https://webpack.js.org/guides/hmr-react/) mode and starts a webpack dev server that sends hot updates to the renderer process:
 
 ```bash
 $ yarn dev
 ```
 
-## Packaging for Production
+## Pack for Production
 
 To package apps for the local platform:
 
@@ -43,51 +40,95 @@ To package apps for the local platform:
 $ yarn package
 ```
 
+## run Tests
+
+```bash
+$ yarn test-all
+```
+
+## Completly stuck?
+
+```bash
+$ yarn wtf
+```
+
+# Storybook
+
+```bash
+$ yarn storybook
+```
+
+
+
+## Overview of usable yarn tasks
+
+```bash
+$ yarn tasks
+```
+
+# What is HyperCoSi for
+
 ## Screens
 
 ### Home
+_This is the welcome page_
+<img alt="Screenshot of the Home screen" src="resources/screens/homeScreen.png" width="300px" />
 
 ### Plan
+_This is the planning page, where your inspirations flow_
+<img alt="Screenshot of the Plan screen" src="resources/screens/planScreen.png" width="300px" />
 
 ### Simulate
-<img src="resources/screens/simulatorScreen.png" width="300px" /> 
+_This is the simulation page, where your dreams come true_
+<img alt="Screenshot of the Simulate screen" src="resources/screens/simulatorScreen.png" width="300px" /> 
 
-### Config
+### Export Config
+_This is the export configuration page, where you go down the Rabbit-Hole.
+<img alt="Screenshot of the Export Config screen" src="resources/screens/exportConfigScreen.png" width="300px" />
 
-## Maintainers
+
+# PCB
+_You might want to build your hardware clean, so you can take 
+This own invented PCB Design fits perfectly to our software.
+<img src="src/pcb/tvbacklight_v2.01_Leiterplatte.png" width="200px" />
+
+## Questions
+#### Wiki
+Our [Wiki](https://github.com/mommel/Hypercosi/wiki) can be found [here](https://github.com/mommel/Hypercosi/wiki)
+
+#### FAQ
+
+# Maintainers
 
 - [Mommel](https://github.com/mommel)
 - [J. Weber](https://github.com/juliamweber)
 - [Krachkind](https://github.com/krachkind)
 
-## PCB
 
-This own invented PCB Design fits perfectly to our software.
+# Found an Security Issue?
+Check the [security.md](https://github.com/mommel/Hypercosi/blob/master/.github/SECURITY.md)
 
-<img src="src/pcb/tvbacklight_v2.01_Leiterplatte.png" width="200px" /> 
+# License
 
-## License
-
-#### HyperCoSi
+## HyperCoSi
 is Copyrighted by the Maintainers listed in this README licensed below [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/)  
 
-#### HyperCoSi-PCB
+## HyperCoSi-PCB
 is Copyright by Mommel and licensed below
 [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/)
 
-#### Dependencies
+## Dependencies
 All files in node_modules have their own licenses
 
     * [Electron](https://electronjs.org/) - [MIT](https://github.com/electron/electron/blob/master/LICENSE)
     * React
     * Redux
-    * [Webpack](https://webpack.js.org) - [MIT](https://webpack.js.org/license/)
-    * [React-Photonkit](http://react-photonkit.github.io/) - [MIT](https://github.com/react-photonkit/react-photonkit/blob/master/license) 
+    * [Webpack](https://webpack.js.org) - [MIT](https://webpack.js.org/license/) 
     * ...
 
 Thanks to [electron-react-boilerplate](https://github.com/chentsulin/electron-react-boilerplate) for good inspirations
 
-#### All files in app/images/background/textures/
+## All files in app/images/background/textures/
 - downloaded from [Subtle Patterns © Toptal Designers](https://toptal.com/designers/subtlepatterns]
 - Copyright [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)
 

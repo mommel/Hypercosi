@@ -3,6 +3,7 @@ import React, {Component}  from "react";
 import PropTypes from 'prop-types';
 import { withRouter } from 'react-router-dom'
 import {Alignment, Button, Classes, Icons, Intent} from '@blueprintjs/core';
+
 class NavigationButton extends Component<Props> {
   
   props: Props

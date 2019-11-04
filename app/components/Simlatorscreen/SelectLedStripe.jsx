@@ -1,11 +1,11 @@
-import * as React from "react";
+import React, {Component} from "react";
 import { Button, Label, MenuItem } from "@blueprintjs/core";
 import { Select } from "@blueprintjs/select";
 import * as LEDTypes from "../../utils/definitions/led-types";
 
 type Props = {};
 
-export default class SelectLedStripe extends Select {
+export default class SelectLedStripe extends Component {
   constructor(props) {
     super(props);
     this.state = { LEDTypes: LEDTypes.options };

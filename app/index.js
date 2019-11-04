@@ -10,6 +10,7 @@ const store = configureStore();
 // Photon.__baseDir = "/app";
 
 const AppContainer = ( process.env.PLAIN_HMR || process.env.REACT_APP_PLAIN_HMR ) ? Fragment : ReactHotAppContainer;
+process.env.ELECTRON_DISABLE_SECURITY_WARNINGS = true
 
 render(
   <AppContainer>

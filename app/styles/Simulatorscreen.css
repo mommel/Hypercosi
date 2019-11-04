@@ -240,4 +240,44 @@ body {
   color: transparent;
 }
 
+.topLeds {
+  box-shadow: 0 -42px 52px 52px;
+  opacity: 0.42;
+  position: absolute;
+  border-radius: 4px;
+  width: 4px;
+  height: 4px;
+  border: 2px;
+}
+
+.rightLeds {
+  box-shadow: 42px 0 52px 52px;
+  opacity: 0.42;
+  position: absolute;
+  border-radius: 4px;
+  width: 4px;
+  height: 4px;
+  border: 2px;
+}
+
+.bottomLeds {
+  box-shadow: 0 42px 52px 52px;
+  opacity: 0.42;
+  position: absolute;
+  border-radius: 4px;
+  width: 4px;
+  height: 4px;
+  border: 2px;
+}
+
+.leftLeds {
+  box-shadow: -42px 0 52px 52px;
+  opacity: 0.42;
+  position: absolute;
+  border-radius: 4px;
+  width: 4px;
+  height: 4px;
+  border: 2px;
+}
+
 /*# sourceMappingURL=Simulatorscreen.css.map */

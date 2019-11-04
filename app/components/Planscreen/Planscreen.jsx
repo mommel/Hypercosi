@@ -15,7 +15,7 @@ export default class Planscreen extends Component<Props> {
   render () {
     return (
       <div id="Planscreen" className={styles.planscreencontainer} data-tid="planscreencontainer">
-        <h2 style={{textAlign: 'left'}} className={styles.screentitle}>Plan</h2>
+        <h2 style={{textAlign: 'left'}} className={styles.screentitle}>Plan your Illumination</h2>
       </div>
     )
   }

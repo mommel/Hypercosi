@@ -6,7 +6,7 @@ import HomePage from './containers/Main/HomePage'
 import SimulatorPage from './containers/Main/SimulatorPage'
 import Toolbar from "./containers/Toolbar/Toolbar"
 import PlanPage from "./containers/Main/PlanPage"
-import ConfigPage from "./containers/Main/ConfigPage"
+import ExportConfigPage from "./containers/Main/ExportConfigPage"
 import styles from './styles/App.css'
 
 
@@ -25,7 +25,7 @@ export default ({ store, history }: Props) => (
             <Route exact path={routes.HOME} component={HomePage} />
             <Route exact path={routes.PLAN} component={PlanPage} />
             <Route exact path={routes.SIMULATE} component={SimulatorPage} />
-            <Route exact path={routes.CONFIG} component={ConfigPage} />
+            <Route exact path={routes.EXPORTCONFIG} component={ExportConfigPage} />
           </window-content>
         </ph-window>
       </App>

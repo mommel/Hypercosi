@@ -14,8 +14,20 @@ export default class Homescreen extends Component<Props> {
   
   render () {
     return (
-      <div id="Homescreen" className={styles.homescreencontainer} data-tid="homescreencontainer">
-          <h2 style={{textAlign: 'left'}} className={styles.screentitle}>Configuration</h2>
+      <div id="Homescreen" className={styles.homescreencontainer} data-tid="homescreencontainer" >
+        <div className={styles.content}>
+          <div className={styles.container}>
+            <p className={styles.text}>
+              HyperCoSi is a
+            </p>
+            <ul className={styles.list}>
+              <li className={styles.item}>Hyperion</li>
+              <li className={styles.item}>Planner</li>
+              <li className={styles.item}>Simulator</li>
+              <li className={styles.item}>Configurator</li>
+            </ul>
+          </div>
+        </div>
       </div>
     )
   }

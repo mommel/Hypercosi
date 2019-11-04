@@ -1,1 +1,1 @@
-{"version":3,"sourceRoot":"","sources":["global-variables.scss","SimulatorTv.scss"],"names":[],"mappings":"AAAA;AAIA;EACE;;;ACFF;EACE;EACA;EACA;EACA;EACA;EACA;EACA;EAMA;EACA;EACA,YACQ;EAGR","file":"SimulatorTv.css"}
+{"version":3,"sourceRoot":"","sources":["global-variables.scss","SimulatorTv.scss"],"names":[],"mappings":"AAAA;AAIA;EACE;;;ACFF;EACE;EACA;EACA;EAeA;EACA;EACA;EAGA","file":"SimulatorTv.css"}

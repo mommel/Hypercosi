@@ -1,11 +1,11 @@
-import * as React from "react";
+import React, {Component} from "react";
 import { Button, Label, MenuItem } from "@blueprintjs/core";
 import { Select } from "@blueprintjs/select";
 import * as TVSizes from "../../utils/definitions/general-tv-sizes";
 
 type Props = {};
 
-export default class SelectTVSize extends Select {
+export default class SelectTVSize extends Component {
   constructor(props) {
     super(props);
     this.state = { TVSizes: TVSizes.tvSizes };
@@ -34,7 +34,7 @@ export default class SelectTVSize extends Select {
   
   
   render () {
-    console.log('tvsize', this.state.tvSizes)
+    console.log('tvsize', this.state.TVSizes)
     return (
       <div>
         <Label>Your TV Size

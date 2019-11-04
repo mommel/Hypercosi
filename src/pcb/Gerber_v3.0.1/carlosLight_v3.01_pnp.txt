@@ -1,0 +1,76 @@
+*Pick And Place List
+*Company=
+*Author=
+*eMail=
+*
+*Project=carlosLight_v3.01
+*Date=02:05:57
+*CreatedBy=Fritzing 0.9.3b.04.19.5c895d327c44a3114e5fcc9d8260daf0cbb52806
+*
+*
+*Coordinates in mm, always center of component
+*Origin 0/0=Lower left corner of PCB
+*Rotation in degree (0-360, math. pos.)
+*
+*No;Value;Package;X;Y;Rotation;Side;Name
+1;;smtso-256-et;57.7351;-86.0011;90;Bottom;GNDIn
+2;1000µF;300 mil [THT, electrolytic];34.8751;-44.0911;-90;Bottom;C3 1kµF1
+3;;;11.1684;-50.3;0;Bottom;IMG4
+4;;1x12_machine-pin-header_lock.004;38.6851;-129.079;180;Bottom;JP3
+5;;smtso-256-et;57.7351;-73.3011;180;Bottom;VIn
+6;;smtso-256-et;6.93513;-73.3011;0;Bottom;VOut
+7;;;31.2378;-5.43214;0;Bottom;IMG1
+8;;switch-spdt_kit;52.6551;-144.421;-90;Bottom;U1
+9;;smtso-256-et;9.47513;-144.421;90;Bottom;DOut
+10;;smtso-256-et;57.7351;-47.9011;0;Bottom;VIn
+11;;;9.96626;-66.7761;0;Bottom;IMG4
+12;470;1206 [SMD];15.545;-139.341;180;Bottom;R470
+13;1000µF;300 mil [THT, electrolytic];34.8751;-18.6911;-90;Bottom;C4 1kµF
+14;;smtso-256-et;6.93513;-35.2011;-90;Bottom;GNDOut
+15;;;6.93522;-108.861;0;Bottom;Hole4
+16;;;47.5751;-55.5211;0;Bottom;Hole9
+17;;1x12_machine-pin-header_lock.004;31.0651;-123.999;180;Bottom;JP5
+18;;smtso-256-et;57.7351;-9.80109;-90;Bottom;GNDIn
+19;330;1206 [SMD];60.2753;-122.551;-90;Top;R330
+20;;1x12_machine-pin-header_lock.004;36.1451;-113.839;180;Bottom;JP7
+21;;;17.0951;-55.5211;0;Bottom;Hole8
+22;;;28.9891;-124.321;0;Bottom;IMG3
+23;;smtso-256-et;57.7351;-98.7011;90;Bottom;Vin
+24;;smtso-256-et;6.93513;-98.7011;-90;Bottom;Vout
+25;;1x12_machine-pin-header_lock.004;38.6851;-111.299;180;Bottom;JP6
+26;;smtso-256-et;57.7351;-60.6011;-90;Bottom;GNDIn
+27;;;47.5752;-4.72101;0;Bottom;Hole2
+28;;smtso-256-et;6.93513;-60.6011;90;Bottom;GNDOut
+29;;;6.93522;-134.261;0;Bottom;Hole1
+30;;;36.1451;-32.6611;0;Bottom;Jumper3
+31;;;11.4507;-25.3232;0;Bottom;IMG4
+32;;smtso-256-et;6.93513;-9.80109;90;Bottom;GNDOut
+33;;1206 [SMD];60.2753;-132.711;-90;Top;Standby
+34;;;36.1451;-58.0611;0;Bottom;Jumper2
+35;;smtso-256-et;6.93513;-47.9011;-90;Bottom;VOut
+36;;;32.104;-74.6681;-90;Bottom;IMG5
+37;;;58.328;-66.8462;0;Bottom;IMG4
+38;;1x12_machine-pin-header_lock.004;38.6851;-108.759;180;Bottom;JP2
+39;;;53.6429;-101.1;0;Bottom;IMG4
+40;;1x12_machine-pin-header_lock.004;38.6851;-136.699;180;Bottom;U5
+41;;;11.3096;-100.959;0;Bottom;IMG4
+42;1000µF;300 mil [THT, electrolytic];34.8751;-69.4911;-90;Bottom;C2 1kµF
+43;;;36.1451;-83.4611;0;Bottom;Jumper1
+44;;;17.0951;-30.1211;0;Bottom;Hole11
+45;;;11.5918;-75.8411;0;Bottom;IMG4
+46;;1x12_machine-pin-header_lock.004;38.6851;-131.823;0;Bottom;U6
+47;;;17.0951;-80.9211;0;Bottom;Hole6
+48;;smtso-256-et;6.93513;-22.5011;0;Bottom;VOut1
+49;;;52.7962;-75.5589;0;Bottom;IMG4
+50;;;53.3607;-25.041;0;Bottom;IMG4
+51;;smtso-256-et;57.7351;-22.5011;180;Bottom;VIn1
+52;;1x12_machine-pin-header_lock.004;38.6851;-134.159;180;Bottom;U4
+53;;;53.4182;-50.2272;0;Bottom;IMG4
+54;;1x12_machine-pin-header_lock.004;38.6851;-126.539;180;Bottom;JP4
+55;;smtso-256-et;6.93513;-86.0011;90;Bottom;GNDOut
+56;;;14.5552;-4.72101;0;Bottom;Hole3
+57;1000µF;300 mil [THT, electrolytic];34.8751;-94.8911;-90;Bottom;C1 1kµF
+58;;;47.5751;-30.1211;0;Bottom;Hole10
+59;;smtso-256-et;57.7351;-35.2011;180;Bottom;GNDIn
+60;;;47.5751;-80.9211;0;Bottom;Hole7
+61;;;39.9552;-144.421;0;Bottom;Hole5

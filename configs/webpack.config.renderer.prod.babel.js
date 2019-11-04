@@ -167,6 +167,21 @@ export default merge.smart(baseConfig, {
         test: /\.(?:ico|gif|png|jpg|jpeg|webp)$/,
         use: 'url-loader',
       },
+      // MP4 Video  - 2 entries
+      {
+        test: /\.mp4$/,
+        use: {
+          loader: 'url-loader',
+          options: {
+            limit: 10000,
+            mimetype: 'video/mp4',
+          },
+        },
+      },
+      {
+        test: /\.html$/,
+        loader: 'html-loader?attrs[]=video:src',
+      },
     ],
   },
 
