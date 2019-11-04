@@ -12,8 +12,11 @@ export default class Simulatorscreen extends Component<Props> {
   constructor(props) {
     super( props )
     this.props = props
-    this.state = this.calculateScreenStyle()
+    let state = this.calculateScreenStyle()
+    this.state = state
   }
+  
+  // videoeRef = null
   
   calculatePositionLeft( width ){
     let positionpoint = null
@@ -141,6 +144,7 @@ export default class Simulatorscreen extends Component<Props> {
   
   generateLeds(position, amount, max, ledstyle){
     let leds = []
+    // let ledsrefs = []
     for (var lId = 1; lId <= amount; lId++ ) {
       let positioner =  Math.floor( lId * (
         max /
@@ -148,9 +152,10 @@ export default class Simulatorscreen extends Component<Props> {
       ))
       
       let ledId = `${position}Led${lId}`
+      // let letIdRef = React.createRef();
       let postitionerFormated = `${positioner}px`
       let randomColor = Math.floor(Math.random()*16777215).toString(16)
-  
+      
       if ( position === 'top' || position === 'bottom' ) {
         if ( position === 'top' ) {
           leds.push(
@@ -166,6 +171,7 @@ export default class Simulatorscreen extends Component<Props> {
                   className={ledstyle}
             />
           )
+          // ledsrefs.push(letIdRef)
         } else {
           leds.push(
             <Leds style={{
@@ -180,6 +186,7 @@ export default class Simulatorscreen extends Component<Props> {
                   className={ledstyle}
             />
           )
+          // ledsrefs.push(letIdRef)
         }
       } else {
         if ( position === 'left' ) {
@@ -195,6 +202,7 @@ export default class Simulatorscreen extends Component<Props> {
                   className={ledstyle}
             />
           )
+          // ledsrefs.push(letIdRef)
         } else {
           leds.push(
             <Leds style={{
@@ -208,11 +216,24 @@ export default class Simulatorscreen extends Component<Props> {
                   className={ledstyle}
             />
           )
+          // ledsrefs.push(letIdRef)
         }
       }
     }
+    // return {
+    //   leds: leds,
+    //   ledsrefs: ledsrefs
+    // }
     return leds
   }
+  
+  // startLights(){
+  //   console.log(' Start the lights ')
+  //   console.log(' SimulatorOptions ', this.videoeRef, ' createdLeds ', this.createdLeds, ' ledsRef ', this.createdLedsRefs )
+  //   let hyperionSimulator = React.forwardRef(new _HyperionSimulator( this.videoeRef, this.createdLeds, this.createdLedsRefs ))
+  // }
+  
+  createdLeds=[]
   
   props: Props;
   
@@ -223,28 +244,52 @@ export default class Simulatorscreen extends Component<Props> {
       this.state.ledsSetup.simulatorWidth,
       styles.topLeds
     )
-    console.log('topLeds', { 1:'top', 2:this.state.ledsSetup.ledsTop, 3:this.state.ledsSetup.simulatorWidth, 4:styles.topLeds})
+    // let topLeds = topLedsObj.leds
+    // let topLedsRefs = topLedsObj.ledsrefs
+    
+    // console.log('topLeds', { 1:'top', 2:this.state.ledsSetup.ledsTop, 3:this.state.ledsSetup.simulatorWidth, 4:styles.topLeds})
     let rightLeds = this.generateLeds(
       'right',
       this.state.ledsSetup.ledsRight,
       this.state.ledsSetup.simulatorHeight,
       styles.rightLeds
     )
-    console.log('rightLeds', { 1:'right', 2:this.state.ledsSetup.ledsRight, 3:this.state.ledsSetup.simulatorHeight, 4:styles.rightLeds})
+    // let rightLeds = rightLedsObj.leds
+    // let rightLedsRefs = rightLedsObj.ledsrefs
+    
+    // console.log('rightLeds', { 1:'right', 2:this.state.ledsSetup.ledsRight, 3:this.state.ledsSetup.simulatorHeight, 4:styles.rightLeds})
     let bottomLeds = this.generateLeds(
       'bottom',
       this.state.ledsSetup.ledsBottom,
       this.state.ledsSetup.simulatorWidth,
       styles.bottomLeds
     )
-    console.log('bottomLeds', { 1:'bottom', 2:this.state.ledsSetup.ledsBottom, 3:this.state.ledsSetup.simulatorWidth, 4:styles.bottomLeds})
+    // let bottomLeds = bottomLedsObj.leds
+    // let bottomLedsRefs = bottomLedsObj.ledsrefs
+    
+    // console.log('bottomLeds', { 1:'bottom', 2:this.state.ledsSetup.ledsBottom, 3:this.state.ledsSetup.simulatorWidth, 4:styles.bottomLeds})
     let leftLeds = this.generateLeds(
       'left',
       this.state.ledsSetup.ledsLeft,
       this.state.ledsSetup.simulatorHeight,
       styles.leftLeds
     )
-    console.log('leftLeds', { 1:'left', 2:this.state.ledsSetup.ledsLeft, 3:this.state.ledsSetup.simulatorHeight, 4:styles.leftLeds})
+  
+    // console.log('leftLeds', { 1:'left', 2:this.state.ledsSetup.ledsLeft, 3:this.state.ledsSetup.simulatorHeight, 4:styles.leftLeds})
+    // let leftLeds = leftLedsObj.leds
+    // let leftLedsRefs = leftLedsObj.ledsrefs
+    
+    this.createdLeds=[]
+    this.createdLeds.push(topLeds)
+    this.createdLeds.push(rightLeds)
+    this.createdLeds.push(bottomLeds)
+    this.createdLeds.push(leftLeds)
+  
+    // this.createdLedsRefs=[]
+    // this.createdLedsRefs.push(React.forwardRef(topLedsRefs))
+    // this.createdLedsRefs.push(React.forwardRef(rightLedsRefs))
+    // this.createdLedsRefs.push(React.forwardRef(bottomLedsRefs))
+    // this.createdLedsRefs.push(React.forwardRef(leftLedsRefs))
     
     return (
       <div id="Simulatorscreen" className={styles.simulatorscreencontainer} data-tid="simulatorscreencontainer">
@@ -255,10 +300,10 @@ export default class Simulatorscreen extends Component<Props> {
           {rightLeds}
           {bottomLeds}
           {leftLeds}
-          <video muted={true} loop={ true } autoPlay={ true }
+          <video id="videoPlayer" muted={true} loop={ true } autoPlay={ true }
                  style={ this.state.videoSimulator }
           >
-            <source src={ VideoV1 } type="video/mp4"/>
+            <source id="innderVideoPlayer" src={ VideoV1 } type="video/mp4"/>
           </video>
         </SimulatorTv>
         <SettingsModal />

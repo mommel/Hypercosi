@@ -8,18 +8,19 @@
  *
  * @flow
  */
-
 const { app, BrowserWindow, crashReporter,
   nativeTheme, Menu, dialog  } = require('electron')
-const join = require('path').join;
+const join = require('path').join
 const isMac = process.platform === 'darwin'
-const openAboutWindow = require('about-window').default;
+const openAboutWindow = require('about-window').default
 const config = require('./config')
+const cors = require('cors')
 const { hot } = require ('react-hot-loader/root')
 
 let mainWindow = null;
 
 const createMainWindow = starthot =>  {
+  
   const is2nd = process.argv.indexOf('--2nd') >= 0;
   const icon = (
       ( process.platform === 'darwin' )
@@ -116,6 +117,7 @@ const createMainWindow = starthot =>  {
     title: config.APP_NAME,
     webPreferences: {
       nodeIntegration: true,
+      webSecurity: false,
     },
     icon: icon,
     titleBarStyle: 'default',
@@ -145,6 +147,7 @@ const createMainWindow = starthot =>  {
   
   win.on('ready-to-show', () => {
     console.log('***** WIN READY-TO-SHOW *****')
+    
     if (!win) {
       throw new Error('"mainWindow" is not defined');
     }
@@ -220,6 +223,7 @@ app.on('window-all-closed', (e) => {
 // app.on('ready', async () => {
 app.on('ready', () => {
   console.log('***** APP READY *****')
+  
   if (
     process.env.NODE_ENV === 'development'
     || ( process.env.DEBUG_PROD === 'true'
